@@ -1,129 +1,821 @@
 [
   {
-    "name": "vision",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vision",
-    "description": "AI image analysis via Groq Llama 4 Scout. Only vision service on x402. Send any image, get detailed description.",
-    "category": "ai",
-    "price": "0.003",
-    "tags": [
-      "vision",
-      "image",
-      "ai",
-      "ocr"
-    ],
-    "id": "mnma66cz0",
-    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
-    "website": "https://thryx.fun",
-    "verified": true,
-    "x402": true,
-    "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.051Z"
-  },
-  {
-    "name": "price-oracle",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/price-oracle",
-    "description": "Base V4 token price history with support/resistance levels, trend detection, and limit order suggestions.",
-    "category": "trading",
-    "price": "0.002",
-    "tags": [
-      "price",
-      "oracle",
-      "v4",
-      "trading"
-    ],
-    "id": "mnma66d01",
-    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
-    "website": "https://thryx.fun",
-    "verified": true,
-    "x402": true,
-    "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.052Z"
-  },
-  {
+    "id": "mnmb9ljg0",
     "name": "oracle-stakes",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/oracle-stakes",
-    "description": "Verifiable predictions with on-chain resolution. Agents commit predictions, chain judges. Build trust through accuracy.",
-    "category": "security",
+    "category": "trust",
     "price": "0.001",
+    "description": "Verifiable predictions with on-chain resolution. Agents commit claims, chain judges.",
     "tags": [
       "trust",
       "prediction",
       "verifiable",
       "primitive"
     ],
-    "id": "mnma66d02",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/oracle-stakes",
     "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
     "website": "https://thryx.fun",
     "verified": true,
     "x402": true,
     "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.052Z"
+    "listedAt": "2026-04-05T22:06:23.307Z"
   },
   {
+    "id": "mnmb9ljg1",
     "name": "vrf",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vrf",
-    "description": "Verifiable random function. Provably fair randomness for games, auctions, selections. 7 modes including dice, shuffle, coin flip.",
-    "category": "security",
+    "category": "trust",
     "price": "0.001",
+    "description": "Verifiable random function. 7 modes: random, range, pick, shuffle, coin, dice, uuid.",
     "tags": [
       "random",
       "vrf",
       "fair",
-      "verifiable",
       "primitive"
     ],
-    "id": "mnma66d03",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vrf",
     "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
     "website": "https://thryx.fun",
     "verified": true,
     "x402": true,
     "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.052Z"
+    "listedAt": "2026-04-05T22:06:23.307Z"
   },
   {
-    "name": "voice",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/voice",
-    "description": "Text-to-speech via Groq Orpheus. 3 voices (troy, hannah, austin). Returns WAV audio. Only TTS on x402.",
-    "category": "ai",
-    "price": "0.004",
-    "tags": [
-      "tts",
-      "voice",
-      "audio",
-      "speech"
-    ],
-    "id": "mnma66d04",
-    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
-    "website": "https://thryx.fun",
-    "verified": true,
-    "x402": true,
-    "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.052Z"
-  },
-  {
+    "id": "mnmb9ljg2",
     "name": "prompt-guard",
-    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/prompt-guard",
-    "description": "Prompt injection and jailbreak detector. 38 attack patterns across 7 categories. Sub-millisecond, pure compute.",
     "category": "security",
     "price": "0.001",
+    "description": "Prompt injection detector. 38 patterns, 7 categories. Sub-millisecond.",
     "tags": [
       "security",
       "injection",
-      "jailbreak",
       "guard"
     ],
-    "id": "mnma66d05",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/prompt-guard",
     "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
     "website": "https://thryx.fun",
     "verified": true,
     "x402": true,
     "status": "VERIFIED",
-    "latencyMs": 0,
-    "listedAt": "2026-04-05T21:35:44.052Z"
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg3",
+    "name": "agent-score",
+    "category": "trust",
+    "price": "0.001",
+    "description": "Agent trust scorer. 5 dimensions: maturity, assets, diversity, activity, protocol experience.",
+    "tags": [
+      "agent",
+      "score",
+      "trust"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-score",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg4",
+    "name": "vision",
+    "category": "ai",
+    "price": "0.003",
+    "description": "Image analysis via Groq Llama 4 Scout. Only vision on x402.",
+    "tags": [
+      "vision",
+      "image",
+      "ai",
+      "ocr"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vision",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg5",
+    "name": "voice",
+    "category": "ai",
+    "price": "0.004",
+    "description": "TTS via Groq Orpheus. 3 voices. Returns WAV. Only TTS on x402.",
+    "tags": [
+      "tts",
+      "voice",
+      "audio"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/voice",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg6",
+    "name": "groq-proxy",
+    "category": "ai",
+    "price": "0.003",
+    "description": "LLM inference. OpenAI-compatible. No API key needed.",
+    "tags": [
+      "llm",
+      "ai",
+      "inference"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/groq-proxy",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg7",
+    "name": "agent-identity",
+    "category": "ai",
+    "price": "5.00",
+    "description": "Generate SOUL.md + SKILL.md + CONSTITUTION.md for OpenClaw agents.",
+    "tags": [
+      "identity",
+      "openclaw",
+      "soul"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-identity",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg8",
+    "name": "smart-router",
+    "category": "ai",
+    "price": "0.001",
+    "description": "Which LLM for this task? Saves 60-95% on tokens.",
+    "tags": [
+      "routing",
+      "llm",
+      "cost"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/smart-router",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg9",
+    "name": "translate",
+    "category": "ai",
+    "price": "0.003",
+    "description": "50+ languages, auto-detect source, preserves formatting.",
+    "tags": [
+      "translate",
+      "language"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/translate",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljga",
+    "name": "price-oracle",
+    "category": "trading",
+    "price": "0.002",
+    "description": "V4 price history + support/resistance + limit order suggestions.",
+    "tags": [
+      "price",
+      "oracle",
+      "v4",
+      "trading"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/price-oracle",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgb",
+    "name": "pool-scorer",
+    "category": "trading",
+    "price": "0.01",
+    "description": "Scan active V4 pools, score, rank. BUY/WATCH/SKIP verdicts.",
+    "tags": [
+      "scanner",
+      "pools",
+      "alpha"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/pool-scorer",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgc",
+    "name": "event-stream",
+    "category": "trading",
+    "price": "0.001",
+    "description": "On-chain RSS feed. 40+ auto-decoded events.",
+    "tags": [
+      "events",
+      "stream",
+      "monitor"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/event-stream",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgd",
+    "name": "gas-forecast",
+    "category": "trading",
+    "price": "0.001",
+    "description": "Gas prediction + 11 operation cost estimates.",
+    "tags": [
+      "gas",
+      "forecast",
+      "cost"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/gas-forecast",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljge",
+    "name": "gas-oracle",
+    "category": "trading",
+    "price": "0.001",
+    "description": "Gas estimation with ETH/USD cost.",
+    "tags": [
+      "gas",
+      "oracle"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/gas-oracle",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgf",
+    "name": "trade-verifier",
+    "category": "trading",
+    "price": "0.002",
+    "description": "Log + verify trades. Build verifiable track record.",
+    "tags": [
+      "verify",
+      "pnl",
+      "proof"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/trade-verifier",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgg",
+    "name": "contract-xray",
+    "category": "security",
+    "price": "0.001",
+    "description": "Reverse-engineer contract interface from bytecode. 150+ selectors.",
+    "tags": [
+      "contract",
+      "bytecode",
+      "abi"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/contract-xray",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgh",
+    "name": "contract-scan",
+    "category": "security",
+    "price": "0.001",
+    "description": "Contract safety scoring. Checks mint, pause, blacklist patterns.",
+    "tags": [
+      "contract",
+      "safety",
+      "audit"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/contract-scan",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgi",
+    "name": "contract-intel",
+    "category": "security",
+    "price": "0.001",
+    "description": "Deep contract intelligence: trust, TVL, activity, age, proxy.",
+    "tags": [
+      "contract",
+      "intelligence",
+      "trust"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/contract-intel",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgj",
+    "name": "holder-check",
+    "category": "security",
+    "price": "0.001",
+    "description": "Token bytecode safety scan. Dangerous selector detection.",
+    "tags": [
+      "token",
+      "safety",
+      "holder"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/holder-check",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgk",
+    "name": "wallet-risk",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Counterparty trust scoring 0-100.",
+    "tags": [
+      "wallet",
+      "risk",
+      "trust"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/wallet-risk",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgl",
+    "name": "wallet-profile",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Full wallet dossier: balance, holdings, type, activity.",
+    "tags": [
+      "wallet",
+      "profile",
+      "intelligence"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/wallet-profile",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgm",
+    "name": "wallet-intel",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Wallet profiling: ETH + 7 tokens, trust score, activity.",
+    "tags": [
+      "wallet",
+      "intel",
+      "balance"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/wallet-intel",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgn",
+    "name": "portfolio",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Wallet holdings: ETH + top 30 Base tokens via Multicall3.",
+    "tags": [
+      "portfolio",
+      "balance",
+      "tokens"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/portfolio",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgo",
+    "name": "activity-narrator",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Plain-English wallet activity summary. Groq narration.",
+    "tags": [
+      "activity",
+      "narrator",
+      "history"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/activity-narrator",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgp",
+    "name": "token-compare",
+    "category": "analytics",
+    "price": "0.001",
+    "description": "Side-by-side token comparison: safety, supply, code.",
+    "tags": [
+      "token",
+      "compare",
+      "analysis"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/token-compare",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgq",
+    "name": "calldata-decoder",
+    "category": "utility",
+    "price": "0.001",
+    "description": "Universal ABI decoder. 80+ functions, 10+ events. Sub-ms.",
+    "tags": [
+      "decoder",
+      "abi",
+      "calldata"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/calldata-decoder",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgr",
+    "name": "resolve",
+    "category": "utility",
+    "price": "0.001",
+    "description": "Universal resolver: selectors, symbols, addresses.",
+    "tags": [
+      "resolve",
+      "lookup",
+      "selector"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/resolve",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgs",
+    "name": "addr-type",
+    "category": "utility",
+    "price": "0.0001",
+    "description": "Classify address type: EOA, ERC20, proxy, diamond, factory.",
+    "tags": [
+      "address",
+      "classify",
+      "type"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/addr-type",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgt",
+    "name": "tx-decoder",
+    "category": "utility",
+    "price": "0.001",
+    "description": "Explain transactions in plain English. Success + reverts.",
+    "tags": [
+      "transaction",
+      "decoder",
+      "explain"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/tx-decoder",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgu",
+    "name": "kv-store",
+    "category": "infrastructure",
+    "price": "0.0005",
+    "description": "Persistent key-value storage. Namespaced. GitHub-backed.",
+    "tags": [
+      "storage",
+      "kv",
+      "state"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/kv-store",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgv",
+    "name": "msg-board",
+    "category": "infrastructure",
+    "price": "0.0005",
+    "description": "Async pub/sub channels. POST to publish, GET to read.",
+    "tags": [
+      "pubsub",
+      "channel",
+      "messaging"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/msg-board",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgw",
+    "name": "agent-dm",
+    "category": "infrastructure",
+    "price": "0.001",
+    "description": "Agent-to-agent direct messages. GitHub-backed relay.",
+    "tags": [
+      "messaging",
+      "dm",
+      "agent"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-dm",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgx",
+    "name": "agent-registry",
+    "category": "infrastructure",
+    "price": "0.001",
+    "description": "Agent discovery. Register by name/tags, search by capability.",
+    "tags": [
+      "registry",
+      "discovery",
+      "agent"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-registry",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgy",
+    "name": "agent-heartbeat",
+    "category": "infrastructure",
+    "price": "0.001",
+    "description": "Liveness monitoring. Ping to prove alive, check before paying.",
+    "tags": [
+      "heartbeat",
+      "liveness",
+      "health"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-heartbeat",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljgz",
+    "name": "base-rpc",
+    "category": "infrastructure",
+    "price": "0.0001",
+    "description": "23-provider Base RPC aggregator. Races 5 per request.",
+    "tags": [
+      "rpc",
+      "base",
+      "blockchain"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/base-rpc",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg10",
+    "name": "directory",
+    "category": "infrastructure",
+    "price": "0.001",
+    "description": "x402 service directory. List and browse services.",
+    "tags": [
+      "directory",
+      "discovery",
+      "listing"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg11",
+    "name": "weather",
+    "category": "data",
+    "price": "0.001",
+    "description": "Weather via Open-Meteo. Current, forecast, history. Free API.",
+    "tags": [
+      "weather",
+      "forecast",
+      "real-world"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/weather",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg12",
+    "name": "arxiv",
+    "category": "data",
+    "price": "0.001",
+    "description": "Academic paper search via arXiv. Free API.",
+    "tags": [
+      "arxiv",
+      "research",
+      "papers"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/arxiv",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg13",
+    "name": "thryx-art",
+    "category": "creative",
+    "price": "0.005",
+    "description": "Generative animated GIFs. 12 scenes, 10 themes. Unique per seed.",
+    "tags": [
+      "art",
+      "gif",
+      "generative"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/thryx-art",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg14",
+    "name": "moltbook-promo",
+    "category": "social",
+    "price": "10.00",
+    "description": "Post token promo to Moltbook (2.5M+ agents).",
+    "tags": [
+      "promotion",
+      "moltbook",
+      "marketing"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/moltbook-promo",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg15",
+    "name": "rich-list",
+    "category": "social",
+    "price": "0.001",
+    "description": "Browse the Rich Degen List.",
+    "tags": [
+      "status",
+      "exclusive",
+      "directory"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/rich-list",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
+  },
+  {
+    "id": "mnmb9ljg16",
+    "name": "rich-list-join",
+    "category": "social",
+    "price": "1000.00",
+    "description": "Join the Rich Degen List. Proves conviction. 100 spots.",
+    "tags": [
+      "status",
+      "exclusive",
+      "premium"
+    ],
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/rich-list-join",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-04-05T22:06:23.307Z"
   }
 ]
