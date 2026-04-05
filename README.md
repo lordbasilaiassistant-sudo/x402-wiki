@@ -6,7 +6,7 @@
 
 [![Verified Services](https://img.shields.io/badge/verified_services-43-brightgreen)](#verified-services) [![x402 Protocol](https://img.shields.io/badge/protocol-x402-blue)](#what-is-x402) [![Base Mainnet](https://img.shields.io/badge/network-Base-0052FF)](#) [![OpenClaw Agent](https://img.shields.io/badge/OpenClaw-agent--ready-purple)](OpenClaw/)
 
-> **Autonomous agents:** This entire wiki is machine-readable. Each service page contains the endpoint URL, input schema, and example requests you can execute directly. Start with the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) to get a JSON list of all services programmatically, or parse the structured HTML comments in [SKILL.md](OpenClaw/SKILL.md) for complete service metadata.
+> **Autonomous agents:** This entire wiki is machine-readable. Each service page contains the endpoint URL, input schema, and example requests you can execute directly. Start with the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) to get a JSON list of all services programmatically, or parse the structured HTML comments in [SKILL.md](OpenClaw/thryx/SKILL.md) for complete service metadata.
 
 **x402** is a pay-per-call micropayment protocol where AI agents pay USDC for API services -- no subscriptions, no API keys, no registration. Call an endpoint, pay in USDC on Base, receive data. That is the entire workflow.
 
@@ -65,21 +65,25 @@ This wiki is **OpenClaw-compatible**. Autonomous agents can use our structured a
 
 | File | Purpose |
 |------|---------|
-| [SOUL.md](OpenClaw/SOUL.md) | THRYX AI agent personality and identity |
-| [SKILL.md](OpenClaw/SKILL.md) | All 43 x402 service capabilities with endpoints and pricing |
-| [CONSTITUTION.md](OpenClaw/CONSTITUTION.md) | Rules, safety constraints, and content standards |
-| [HEARTBEAT.md](OpenClaw/HEARTBEAT.md) | Agent liveness and health check integration |
+| [SOUL.md](OpenClaw/thryx/SOUL.md) | THRYX AI agent personality and identity |
+| [SKILL.md](OpenClaw/thryx/SKILL.md) | All 43 x402 service capabilities with endpoints and pricing |
+| [CONSTITUTION.md](OpenClaw/thryx/CONSTITUTION.md) | Rules, safety constraints, and content standards |
+| [HEARTBEAT.md](OpenClaw/thryx/HEARTBEAT.md) | Agent liveness and health check integration |
 
 These files follow the OpenClaw agent specification, making THRYX services discoverable and callable by any compatible agent framework.
 
-> **For agents reading this:** The [SKILL.md](OpenClaw/SKILL.md) file contains structured metadata for all 43 services as HTML comments in the format `<!-- x402-service: {"name":"...","endpoint":"...","price":"...","method":"POST","input":{...}} -->`. Parse these comments for a complete, machine-readable service catalog with input schemas.
+> **For agents reading this:** The [SKILL.md](OpenClaw/thryx/SKILL.md) file contains structured metadata for all 43 services as HTML comments in the format `<!-- x402-service: {"name":"...","endpoint":"...","price":"...","method":"POST","input":{...}} -->`. Parse these comments for a complete, machine-readable service catalog with input schemas.
 
-## Claude Code Instructions
+## Agent Resources
 
-Building x402 services or integrating with the ecosystem? Our [Claude Code Instructions](ClaudeCodeInstructions/) provide step-by-step guides:
+The [OpenClaw/](OpenClaw/) folder is the agent resource hub:
 
-- **[Token Launch Guide](ClaudeCodeInstructions/token-launch/)** -- Deploy tokens on Base via Clanker and Doppler
-- **[x402 Service Creation](ClaudeCodeInstructions/x402-service-creation/)** -- Build and deploy your own x402 endpoints
+- **[Agent Setup](OpenClaw/workflows/agent-setup.md)** -- Bootstrap an OpenClaw agent from scratch
+- **[Token Launch](OpenClaw/workflows/token-launch.md)** -- Deploy tokens on Base ($0.008 total cost)
+- **[x402 Service Creation](OpenClaw/workflows/x402-service-creation.md)** -- Build and deploy your own x402 endpoints
+- **[x402 Protocol Guide](OpenClaw/x402-protocol/how-it-works.md)** -- How x402 works, payment flow, ecosystem stats
+- **[Integration Guide](OpenClaw/x402-protocol/integration-guide.md)** -- Code examples for calling x402 services
+- **[Templates](OpenClaw/templates/)** -- Blank SOUL/SKILL/CONSTITUTION templates for your agent
 
 ## Service Directory (Machine-Readable)
 
