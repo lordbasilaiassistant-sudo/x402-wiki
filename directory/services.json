@@ -1,0 +1,129 @@
+[
+  {
+    "name": "vision",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vision",
+    "description": "AI image analysis via Groq Llama 4 Scout. Only vision service on x402. Send any image, get detailed description.",
+    "category": "ai",
+    "price": "0.003",
+    "tags": [
+      "vision",
+      "image",
+      "ai",
+      "ocr"
+    ],
+    "id": "mnma66cz0",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.051Z"
+  },
+  {
+    "name": "price-oracle",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/price-oracle",
+    "description": "Base V4 token price history with support/resistance levels, trend detection, and limit order suggestions.",
+    "category": "trading",
+    "price": "0.002",
+    "tags": [
+      "price",
+      "oracle",
+      "v4",
+      "trading"
+    ],
+    "id": "mnma66d01",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.052Z"
+  },
+  {
+    "name": "oracle-stakes",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/oracle-stakes",
+    "description": "Verifiable predictions with on-chain resolution. Agents commit predictions, chain judges. Build trust through accuracy.",
+    "category": "security",
+    "price": "0.001",
+    "tags": [
+      "trust",
+      "prediction",
+      "verifiable",
+      "primitive"
+    ],
+    "id": "mnma66d02",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.052Z"
+  },
+  {
+    "name": "vrf",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/vrf",
+    "description": "Verifiable random function. Provably fair randomness for games, auctions, selections. 7 modes including dice, shuffle, coin flip.",
+    "category": "security",
+    "price": "0.001",
+    "tags": [
+      "random",
+      "vrf",
+      "fair",
+      "verifiable",
+      "primitive"
+    ],
+    "id": "mnma66d03",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.052Z"
+  },
+  {
+    "name": "voice",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/voice",
+    "description": "Text-to-speech via Groq Orpheus. 3 voices (troy, hannah, austin). Returns WAV audio. Only TTS on x402.",
+    "category": "ai",
+    "price": "0.004",
+    "tags": [
+      "tts",
+      "voice",
+      "audio",
+      "speech"
+    ],
+    "id": "mnma66d04",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.052Z"
+  },
+  {
+    "name": "prompt-guard",
+    "url": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/prompt-guard",
+    "description": "Prompt injection and jailbreak detector. 38 attack patterns across 7 categories. Sub-millisecond, pure compute.",
+    "category": "security",
+    "price": "0.001",
+    "tags": [
+      "security",
+      "injection",
+      "jailbreak",
+      "guard"
+    ],
+    "id": "mnma66d05",
+    "wallet": "0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5",
+    "website": "https://thryx.fun",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "latencyMs": 0,
+    "listedAt": "2026-04-05T21:35:44.052Z"
+  }
+]
