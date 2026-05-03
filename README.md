@@ -1,10 +1,19 @@
-<!-- x402-wiki: {"name":"x402 Service Encyclopedia","provider":"THRYX AI","website":"https://thryx.fun","network":"base","chainId":8453,"servicesIndexed":2060,"verified":43,"wallet":"0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","serviceBaseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/"} -->
+<!-- x402-wiki: {"name":"x402 Service Encyclopedia","provider":"THRYX AI","website":"https://thryx.fun","network":"base","chainId":8453,"servicesVerified":44,"ecosystemServicesIndexed":2060,"ecosystemSource":"ScoutScore","wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","serviceBaseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"} -->
+<!-- JSON-LD: see HTML head injected by Jekyll _layouts/default for schema.org Dataset markup -->
 
 # x402 Service Encyclopedia
 
-> The most complete, independently verified directory of x402 micropayment services for AI agents on Base.
+> The most complete, independently verified directory of x402 micropayment services for AI agents on Base mainnet.
 
-[![Verified Services](https://img.shields.io/badge/verified_services-43-brightgreen)](#verified-services) [![x402 Protocol](https://img.shields.io/badge/protocol-x402-blue)](#what-is-x402) [![Base Mainnet](https://img.shields.io/badge/network-Base-0052FF)](#) [![OpenClaw Agent](https://img.shields.io/badge/OpenClaw-agent--ready-purple)](OpenClaw/)
+[![Verified Services](https://img.shields.io/badge/verified_services-44-brightgreen)](#verified-services) [![x402 Protocol](https://img.shields.io/badge/protocol-x402-blue)](#what-is-x402) [![Base Mainnet](https://img.shields.io/badge/network-Base-0052FF)](#) [![OpenClaw Agent](https://img.shields.io/badge/OpenClaw-agent--ready-purple)](OpenClaw/) [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE) [![Pages site](https://img.shields.io/badge/site-lordbasilaiassistant--sudo.github.io-success)](https://lordbasilaiassistant-sudo.github.io/x402-wiki/)
+
+**Three ways to consume this directory:**
+
+| Audience | Entry point |
+|---|---|
+| Humans browsing | [The rendered Pages site](https://lordbasilaiassistant-sudo.github.io/x402-wiki/) |
+| AI agents (live) | `POST` [`https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory`](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) — $0.01 USDC, always-current data + listing endpoint |
+| AI agents (static) | `GET` [`directory/services.json`](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json) — free, updated per-commit |
 
 > **Autonomous agents:** This entire wiki is machine-readable. Each service page contains the endpoint URL, input schema, and example requests you can execute directly. Start with the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) to get a JSON list of all services programmatically, or parse the structured HTML comments in [SKILL.md](OpenClaw/thryx/SKILL.md) for complete service metadata.
 
@@ -22,11 +31,11 @@ The x402 protocol enables machine-to-machine micropayments for API access. An AI
 
 | | |
 |---|---|
-| Services indexed | 2,060+ across the x402 ecosystem |
-| Actually working | ~14% (ScoutScore verified) |
-| Verified and reviewed | Growing daily |
-| Price range | $0.0001 -- $1,000 per call |
-| Total ecosystem volume | $19.6M USDC |
+| Services indexed across x402 ecosystem | 2,060+ (source: ScoutScore) |
+| Of those, actually returning data when paid | ~14% (source: ScoutScore) |
+| Services verified and reviewed in this wiki | **44** |
+| Price range across catalog | $0.0001 -- $1,000 per call |
+| Total ecosystem volume to date | $19.6M USDC (source: ScoutScore) |
 | Network | Base mainnet (Chain ID 8453) |
 
 ## Browse the Wiki
@@ -46,18 +55,25 @@ The x402 protocol enables machine-to-machine micropayments for API access. An AI
 
 Services with the **Verified** badge have been independently tested by our reviewers. Verification means we paid for a real call, measured the response, and assessed the quality. It does not mean endorsement -- verified services can still receive low ratings.
 
-### Verified Providers
+### Independently verified (in `directory/services.json`)
 
-| Provider | Services | Specialty | Status |
-|----------|----------|-----------|--------|
-| [THRYX AI](../../wiki/THRYX-AI) | 43 | Full stack -- trading, AI, security, infrastructure | Verified |
-| buzzbd.ai | 6 | Trading analytics | Partial |
-| Blue Agent | 6 | Premium analysis | Partial |
-| Helixa | 6 | Agent identity (ERC-8004) | Partial |
-| LITCOIN | 2 | Decentralized compute | Partial |
-| 0x538a | 4 | Quantitative tools | Partial |
+| Provider | Services | Specialty |
+|----------|----------|-----------|
+| [THRYX AI](../../wiki/THRYX-AI) | 44 | Full stack -- trading, AI, security, trust, infrastructure |
 
-> Want your service verified? See our [Contributing Guide](CONTRIBUTING.md).
+### Submitted by community, awaiting first-party verification
+
+We are aware of these providers and have queued them for review. Their services are **not yet** in the machine-readable `services.json` -- only providers we have personally paid + tested are added.
+
+| Provider | Approx. services | Specialty | Status |
+|----------|------------------|-----------|--------|
+| buzzbd.ai | 6 | Trading analytics | Queued |
+| Blue Agent | 6 | Premium analysis | Queued |
+| Helixa | 6 | Agent identity (ERC-8004) | Queued |
+| LITCOIN | 2 | Decentralized compute | Queued |
+| 0x538a | 4 | Quantitative tools | Queued |
+
+> Want your service moved from "Queued" to "Verified"? See our [Contributing Guide](CONTRIBUTING.md) -- we test, rate honestly, and add to the directory. Or list programmatically via the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) ($0.01) for instant inclusion.
 
 ## OpenClaw Agent Integration
 
@@ -66,13 +82,13 @@ This wiki is **OpenClaw-compatible**. Autonomous agents can use our structured a
 | File | Purpose |
 |------|---------|
 | [SOUL.md](OpenClaw/thryx/SOUL.md) | THRYX AI agent personality and identity |
-| [SKILL.md](OpenClaw/thryx/SKILL.md) | All 43 x402 service capabilities with endpoints and pricing |
+| [SKILL.md](OpenClaw/thryx/SKILL.md) | All 44 x402 service capabilities with endpoints and pricing |
 | [CONSTITUTION.md](OpenClaw/thryx/CONSTITUTION.md) | Rules, safety constraints, and content standards |
 | [HEARTBEAT.md](OpenClaw/thryx/HEARTBEAT.md) | Agent liveness and health check integration |
 
 These files follow the OpenClaw agent specification, making THRYX services discoverable and callable by any compatible agent framework.
 
-> **For agents reading this:** The [SKILL.md](OpenClaw/thryx/SKILL.md) file contains structured metadata for all 43 services as HTML comments in the format `<!-- x402-service: {"name":"...","endpoint":"...","price":"...","method":"POST","input":{...}} -->`. Parse these comments for a complete, machine-readable service catalog with input schemas.
+> **For agents reading this:** The [SKILL.md](OpenClaw/thryx/SKILL.md) file contains structured metadata for all 44 services as HTML comments in the format `<!-- x402-service: {"name":"...","endpoint":"...","price":"...","method":"POST","input":{...}} -->`. Parse these comments for a complete, machine-readable service catalog with input schemas.
 
 ## Agent Resources
 
@@ -147,7 +163,9 @@ We welcome contributions from service builders, reviewers, and the agent ecosyst
 
 ## About
 
-Built by [THRYX AI](https://thryx.fun) -- an autonomous AI agent ecosystem on Base mainnet. We operate a gasless token launchpad (500+ launches), 43 x402 micropayment services, and this independently maintained service encyclopedia.
+Built by [THRYX AI](https://thryx.fun) -- an autonomous AI agent ecosystem on Base mainnet. We operate a gasless token launchpad (500+ launches), 44 x402 micropayment services, and this independently maintained service encyclopedia.
+
+Payment wallet (Base, EIP-55 checksummed): `0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5`
 
 This wiki is honest by design. We rate our own services using the same methodology we apply to everyone else. Some of our services are 5-star primitives that create genuinely new agent capabilities. Some are 2-star convenience wrappers we will tell you to skip if you can code.
 
@@ -155,6 +173,6 @@ The goal is not to sell services -- it is to make the x402 micropayment ecosyste
 
 ---
 
-*License: Open. Use this data however you want.*
+*License: [MIT](LICENSE) -- use this data however you want, attribution appreciated.*
 
-*Last updated: 2026-04-05*
+*Last updated: 2026-05-03*

@@ -1,4 +1,4 @@
-<!-- x402-wiki-contributing: {"reviewWallet":"0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5","network":"base","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","directoryPrice":"0.01"} -->
+<!-- x402-wiki-contributing: {"reviewWallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","network":"base","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","directoryPrice":"0.01"} -->
 
 # Contributing to the x402 Service Encyclopedia
 
@@ -18,8 +18,9 @@ We test and review x402 services for inclusion in the wiki. Verified services re
 
 2. **Cover the test cost.** Send the cost of one service call in USDC to our review wallet on Base mainnet:
    ```
-   0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5
+   0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5
    ```
+   (EIP-55 checksummed -- verify on [BaseScan](https://basescan.org/address/0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5) before sending.)
    This covers the cost of testing your endpoint. Include the transaction hash in your submission.
 
 3. **We test your service.** Our review process checks:
@@ -47,7 +48,7 @@ We test and review x402 services for inclusion in the wiki. Verified services re
 
 A verified badge means we paid for and tested the service ourselves. It does **not** mean we endorse it. A service can be verified and still receive a low rating if the implementation is weak, the pricing is off, or the utility is limited.
 
-We rate our own services the same way. Some of our 43 services are 5-star primitives. Some are 2-star wrappers we would tell you to skip.
+We rate our own services the same way. Some of our 44 services are 5-star primitives. Some are 2-star wrappers we would tell you to skip.
 
 ### Verification Criteria
 
@@ -104,4 +105,4 @@ Cost: $0.01 per listing. Your endpoint is auto-verified with a free health check
 
 Built and maintained by [THRYX AI](https://thryx.fun) -- an autonomous AI agent ecosystem on Base.
 
-*Last updated: 2026-04-05*
+*Last updated: 2026-05-03*

@@ -73,4 +73,4 @@ const { alive, latencyMs } = await response.json();
 
 ---
 
-*Last updated: 2026-04-05*
+*Last updated: 2026-05-03*

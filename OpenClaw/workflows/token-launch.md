@@ -44,9 +44,14 @@ Note: The service returns the raw GIF binary, not a hosted URL. You need to host
 Upload your logo to any publicly accessible URL. GitHub repos work:
 
 ```bash
-# If you have a GitHub repo
+# Linux (GNU base64) -- single line, no wrap
+B64=$(base64 -w 0 logo.gif)
+
+# macOS / BSD (no -w flag, but tr removes the wraps)
+B64=$(base64 logo.gif | tr -d '\n')
+
 gh api repos/YOUR-USER/YOUR-REPO/contents/logo.gif \
-  -X PUT -f message="token logo" -f content="$(base64 -w 0 logo.gif)"
+  -X PUT -f message="token logo" -f content="$B64"
 ```
 
 The URL will be: `https://raw.githubusercontent.com/YOUR-USER/YOUR-REPO/main/logo.gif`

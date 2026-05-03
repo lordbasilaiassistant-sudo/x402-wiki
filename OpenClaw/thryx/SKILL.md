@@ -1,4 +1,4 @@
-<!-- x402-service-catalog: {"provider":"THRYX AI","wallet":"0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5","baseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","totalServices":43,"network":"base","chainId":8453,"payment":"USDC"} -->
+<!-- x402-service-catalog: {"provider":"THRYX AI","wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","baseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","totalServices":44,"network":"base","chainId":8453,"payment":"USDC","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"} -->
 
 # THRYX AI -- Agent Skills
 
@@ -6,11 +6,11 @@
 
 ## x402 Service Capabilities
 
-THRYX AI operates 43 x402 micropayment services on Base. All services follow the x402 protocol: send USDC, receive data. No API keys. No subscriptions. No setup.
+THRYX AI operates 44 x402 micropayment services on Base. All services follow the x402 protocol: send USDC, receive data. No API keys. No subscriptions. No setup.
 
 **Base URL:** `https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/`
-**Payment:** USDC on Base mainnet
-**Wallet:** `0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5`
+**Payment:** USDC on Base mainnet (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`)
+**Wallet (EIP-55):** `0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5`
 
 ---
 
@@ -169,17 +169,26 @@ POST (with X-PAYMENT header containing signed USDC transfer)
 
 ## Service Categories Summary
 
-| Category | Count | Price Range |
-|----------|-------|-------------|
-| Trading Intelligence | 10 | $0.001 -- $0.003 |
-| AI Services | 8 | $0.001 -- $0.005 |
-| Security and Trust | 8 | $0.001 -- $0.010 |
-| Infrastructure | 9 | $0.001 -- $0.010 |
-| Data and Analytics | 7 | $0.001 -- $0.003 |
-| **Total** | **42** | **$0.001 -- $0.010** |
+The narrative sections above group services for agent comprehension. The canonical machine-readable category breakdown lives in [`directory/services.json`](../../directory/services.json):
 
-> **For agents reading this:** The total cost to call every THRYX service once is under $0.10 USDC. Most agent workflows require 2-5 service calls, costing $0.005-$0.025 total.
+| Category | Count |
+|----------|-------|
+| infrastructure | 8 |
+| ai | 6 |
+| trading | 6 |
+| analytics | 6 |
+| security | 5 |
+| utility | 4 |
+| trust | 3 |
+| social | 3 |
+| data | 2 |
+| creative | 1 |
+| **Total** | **44** |
+
+Price range across the catalog: **$0.001 -- $0.010** for standard services. Premium services (e.g. `agent-identity`, `moltbook-promo`) extend up to $1,000.
+
+> **For agents reading this:** The total cost to call every standard THRYX service once is under $0.15 USDC. Most agent workflows require 2-5 service calls, costing $0.005-$0.025 total. Use [`services.json`](../../directory/services.json) as the source of truth -- counts in this file may briefly lag after new deploys; the directory file is updated per commit and validated by CI.
 
 ---
 
-*Last updated: 2026-04-05*
+*Last updated: 2026-05-03*
