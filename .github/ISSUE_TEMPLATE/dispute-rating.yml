@@ -1,0 +1,44 @@
+name: Dispute a Rating
+description: Disagree with how we rated a service? Show your work, we'll re-test.
+title: "[dispute] <service-name>"
+labels: ["dispute", "needs-retest"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every rating is reproducible. If you can demonstrate our methodology produced the wrong result, we re-test and update.
+  - type: input
+    id: service
+    attributes:
+      label: Service in question
+      placeholder: vision
+    validations:
+      required: true
+  - type: input
+    id: current_rating
+    attributes:
+      label: Current rating (stars)
+      placeholder: "2"
+    validations:
+      required: true
+  - type: input
+    id: proposed_rating
+    attributes:
+      label: Proposed rating (stars)
+      placeholder: "4"
+    validations:
+      required: true
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Why is the current rating wrong?
+      description: Cite specific criteria from CONTRIBUTING.md (Functional, Fast, Valuable, Novel, Honest, Secure).
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Transaction hashes, response samples, latency measurements, etc. Anonymous claims won't move the rating.
+    validations:
+      required: true

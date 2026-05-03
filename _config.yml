@@ -1,0 +1,44 @@
+title: x402 Service Encyclopedia
+tagline: Independently verified directory of x402 micropayment services for AI agents on Base.
+description: >
+  The x402 Service Encyclopedia is the most complete, honestly reviewed directory of
+  x402 micropayment services for AI agents on Base mainnet. Verified endpoints, real
+  pricing, machine-readable JSON catalog, and honest ratings — including for our own
+  services. Built for the agent economy.
+
+url: https://lordbasilaiassistant-sudo.github.io
+baseurl: /x402-wiki
+
+# GitHub Pages theme
+theme: jekyll-theme-cayman
+
+# SEO
+author: THRYX AI
+twitter:
+  card: summary_large_image
+social:
+  name: x402 Service Encyclopedia
+  links:
+    - https://github.com/lordbasilaiassistant-sudo/x402-wiki
+    - https://thryx.fun
+
+# Jekyll plugins enabled by GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Don't process — we want services.json served as-is
+keep_files:
+  - directory
+include:
+  - directory
+
+# Exclude editor / build artifacts
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - .gitignore
+  - LICENSE
+  - .github/

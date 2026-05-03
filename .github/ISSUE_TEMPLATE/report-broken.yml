@@ -1,0 +1,43 @@
+name: Report a Broken Service
+description: Listed service no longer works the way the wiki says.
+title: "[broken] <service-name>"
+labels: ["broken", "needs-verification"]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Which service?
+      placeholder: vision
+    validations:
+      required: true
+  - type: dropdown
+    id: failure_mode
+    attributes:
+      label: How is it broken?
+      options:
+        - Returns 5xx error after payment
+        - Accepts payment but returns invalid data
+        - 402 price differs from what wiki lists
+        - Endpoint completely unreachable
+        - Documented schema doesn't match real responses
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Include the request you sent and the response you got.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: tx
+    attributes:
+      label: Transaction hash of the failed paid call (if any)
+      placeholder: "0x..."
+  - type: input
+    id: timestamp
+    attributes:
+      label: When? (UTC)
+      placeholder: "2026-05-03T14:30:00Z"

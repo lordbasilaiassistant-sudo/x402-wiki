@@ -1,0 +1,86 @@
+name: Submit a Service for Review
+description: Get your x402 service tested and added to the encyclopedia.
+title: "[submit] <service-name>"
+labels: ["submission", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit your x402 service for independent verification.
+        We test, rate honestly (1–5 stars), and add the result to the wiki + machine-readable directory.
+        Faster path: list programmatically via the directory endpoint ($0.01) — see [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: input
+    id: name
+    attributes:
+      label: Service name
+      placeholder: my-service
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Endpoint URL
+      placeholder: https://x402.example.com/0xabc.../my-service
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: Price per call (USDC)
+      placeholder: "0.001"
+    validations:
+      required: true
+  - type: input
+    id: wallet
+    attributes:
+      label: Payment wallet (Base mainnet, EIP-55 checksummed)
+      placeholder: "0xAbC..."
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - trading
+        - ai
+        - security
+        - trust
+        - infrastructure
+        - data
+        - analytics
+        - utility
+        - social
+        - creative
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+      description: One paragraph. Be specific. Agents will read this.
+    validations:
+      required: true
+  - type: textarea
+    id: input_schema
+    attributes:
+      label: Input schema (JSON)
+      description: Example request body that produces a successful response.
+      render: json
+    validations:
+      required: true
+  - type: input
+    id: test_tx
+    attributes:
+      label: Test transaction hash (optional but speeds up review)
+      placeholder: "0x..."
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: The 402 response price matches what I listed above
+          required: true
+        - label: I understand the review is honest — low ratings are published with reasons
+          required: true

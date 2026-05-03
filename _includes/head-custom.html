@@ -1,0 +1,75 @@
+<!-- JSON-LD: Dataset markup so AI search engines (Perplexity, Gemini, Claude, Google AI Overviews) ingest the x402 directory as structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "x402 Service Encyclopedia",
+  "alternateName": "x402-wiki",
+  "description": "Independently verified directory of x402 micropayment services for AI agents on Base mainnet. Each entry includes endpoint URL, price in USDC, payment wallet, category, and machine-readable input schema.",
+  "url": "https://lordbasilaiassistant-sudo.github.io/x402-wiki/",
+  "sameAs": [
+    "https://github.com/lordbasilaiassistant-sudo/x402-wiki"
+  ],
+  "keywords": [
+    "x402",
+    "x402 protocol",
+    "AI agent payments",
+    "USDC micropayments",
+    "Base mainnet",
+    "agent economy",
+    "machine-to-machine payments",
+    "HTTP 402",
+    "OpenClaw",
+    "agent discovery"
+  ],
+  "license": "https://opensource.org/licenses/MIT",
+  "creator": {
+    "@type": "Organization",
+    "name": "THRYX AI",
+    "url": "https://thryx.fun"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "THRYX AI",
+    "url": "https://thryx.fun"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory",
+      "description": "Live directory endpoint (x402-paid, $0.01 USDC per call; doubles as listing endpoint for new submissions)"
+    }
+  ],
+  "variableMeasured": [
+    {"@type": "PropertyValue", "name": "service name"},
+    {"@type": "PropertyValue", "name": "endpoint URL"},
+    {"@type": "PropertyValue", "name": "price (USDC)"},
+    {"@type": "PropertyValue", "name": "payment wallet (Base mainnet)"},
+    {"@type": "PropertyValue", "name": "category"},
+    {"@type": "PropertyValue", "name": "tags"},
+    {"@type": "PropertyValue", "name": "verified status"}
+  ],
+  "spatialCoverage": "Base mainnet (Chain ID 8453)",
+  "temporalCoverage": "2026-04/.."
+}
+</script>
+
+<!-- Canonical link explicitly set so the GH Pages site is treated as the primary surface, not the github.com repo page -->
+<link rel="canonical" href="https://lordbasilaiassistant-sudo.github.io/x402-wiki/" />
+
+<!-- Open Graph + Twitter Card defaults so links shared in chat / agent transcripts render properly -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="x402 Service Encyclopedia" />
+<meta property="og:description" content="The most complete, independently verified directory of x402 micropayment services for AI agents on Base mainnet." />
+<meta property="og:url" content="https://lordbasilaiassistant-sudo.github.io/x402-wiki/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- IndexNow / agent-discovery hints -->
+<meta name="ai-discovery" content="x402, agent-economy, micropayments, base-mainnet" />
+<link rel="alternate" type="application/json" title="x402 service catalog (machine-readable)" href="https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json" />

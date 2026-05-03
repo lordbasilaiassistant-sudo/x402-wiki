@@ -1,0 +1,68 @@
+name: Validate services.json
+
+on:
+  pull_request:
+    paths:
+      - 'directory/services.json'
+      - '.github/workflows/validate-directory.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'directory/services.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON syntax + required fields
+        run: |
+          node -e '
+            const fs = require("fs");
+            const data = JSON.parse(fs.readFileSync("directory/services.json", "utf8"));
+            if (!Array.isArray(data)) { console.error("services.json must be a JSON array"); process.exit(1); }
+
+            const required = ["id", "name", "category", "price", "description", "url", "wallet"];
+            const allowedCategories = ["trading","ai","security","trust","infrastructure","data","analytics","utility","social","creative"];
+            const errors = [];
+            const ids = new Set();
+            const names = new Set();
+
+            data.forEach((s, i) => {
+              required.forEach(k => {
+                if (s[k] === undefined || s[k] === null || s[k] === "") errors.push(`#${i} (${s.name||"?"}): missing required field "${k}"`);
+              });
+              if (s.id) {
+                if (ids.has(s.id)) errors.push(`#${i} (${s.name}): duplicate id "${s.id}"`);
+                ids.add(s.id);
+              }
+              if (s.name) {
+                if (names.has(s.name)) errors.push(`#${i} (${s.name}): duplicate name`);
+                names.add(s.name);
+              }
+              if (s.category && !allowedCategories.includes(s.category)) {
+                errors.push(`#${i} (${s.name}): invalid category "${s.category}". Allowed: ${allowedCategories.join(", ")}`);
+              }
+              if (s.url && !/^https:\/\//.test(s.url)) errors.push(`#${i} (${s.name}): url must be https://`);
+              if (s.wallet && !/^0x[a-fA-F0-9]{40}$/.test(s.wallet)) errors.push(`#${i} (${s.name}): wallet is not a valid 0x address`);
+              if (s.price && !/^\d+(\.\d+)?$/.test(String(s.price))) errors.push(`#${i} (${s.name}): price must be a decimal string like "0.001"`);
+            });
+
+            if (errors.length) {
+              console.error("services.json validation FAILED:\n" + errors.map(e => "  - " + e).join("\n"));
+              process.exit(1);
+            }
+            console.log(`services.json OK — ${data.length} services validated`);
+          '
+
+      - name: Verify counts referenced in README match
+        if: always()
+        run: |
+          COUNT=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("directory/services.json","utf8")).length)')
+          README_COUNT=$(grep -oE 'verified[^0-9]{0,5}([0-9]{1,4})' README.md | head -1 | grep -oE '[0-9]+' || echo "0")
+          echo "directory count: $COUNT"
+          echo "README first 'verified N' mention: $README_COUNT"
+          if [ "$COUNT" != "$README_COUNT" ]; then
+            echo "::warning::README claims $README_COUNT verified services but services.json has $COUNT — please update README."
+          fi
