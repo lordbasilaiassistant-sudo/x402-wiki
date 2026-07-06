@@ -837,5 +837,29 @@
     "x402": true,
     "status": "VERIFIED",
     "listedAt": "2026-04-05T23:20:04.962Z"
+  },
+  {
+    "id": "jmtx402t0",
+    "name": "jmt-x402-agent-tools",
+    "category": "data",
+    "price": "0.001",
+    "description": "25 paid x402 endpoints on Base mainnet: web search, AI analysis, crypto/stock data, SEC filings, company intel, news, sentiment, macro dashboard. Local LLM-powered. $0.001-$0.15/call USDC.",
+    "tags": [
+      "search",
+      "ai",
+      "crypto",
+      "stocks",
+      "sec",
+      "news",
+      "sentiment",
+      "macro"
+    ],
+    "url": "https://jmt-x402-proxy.jmthomasofficial.workers.dev",
+    "wallet": "0x624FaF18C78456C8Da5bf156Cd77c1A2033F21c5",
+    "website": "https://jmthomasofficial.workers.dev",
+    "verified": false,
+    "x402": true,
+    "status": "COMMUNITY_SUBMITTED",
+    "listedAt": "2026-07-06T00:00:00.000Z"
   }
 ]

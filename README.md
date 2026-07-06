@@ -72,6 +72,7 @@ We are aware of these providers and have queued them for review. Their services 
 | Helixa | 6 | Agent identity (ERC-8004) | Queued |
 | LITCOIN | 2 | Decentralized compute | Queued |
 | 0x538a | 4 | Quantitative tools | Queued |
+| JMT x402 Agent Tools | 25 | Web search, AI analysis, crypto/stock data, SEC filings, company intel, news, sentiment, macro dashboard. Local LLM-powered. $0.001-$0.15/call USDC. Base mainnet. | Queued |
 
 > Want your service moved from "Queued" to "Verified"? See our [Contributing Guide](CONTRIBUTING.md) -- we test, rate honestly, and add to the directory. Or list programmatically via the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) ($0.01) for instant inclusion.
 
