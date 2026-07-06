@@ -837,5 +837,30 @@
     "x402": true,
     "status": "VERIFIED",
     "listedAt": "2026-04-05T23:20:04.962Z"
+  },
+  {
+    "id": "asnhp9poyk",
+    "name": "agentservices",
+    "category": "data",
+    "price": "0.01",
+    "description": "Paid APIs for AI agents \u2014 data, search, market intelligence, on-chain analytics, DeFi yields, crypto indicators, whale tracking, AI inference, marketing intelligence, and more. 37 endpoints, 25 paid via x402.",
+    "tags": [
+      "data",
+      "crypto",
+      "defi",
+      "search",
+      "inference",
+      "market-intelligence",
+      "onchain",
+      "analytics",
+      "agents"
+    ],
+    "url": "https://api.aiservices.to/v1/indicators/BTC",
+    "wallet": "0x9863aB6242663FCc84c33632741711dB78f8Fd15",
+    "website": "https://agentservices.to",
+    "verified": true,
+    "x402": true,
+    "status": "VERIFIED",
+    "listedAt": "2026-07-06T14:07:08.154300+00:00"
   }
 ]
