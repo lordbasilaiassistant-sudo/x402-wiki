@@ -855,7 +855,7 @@
       "analytics",
       "agents"
     ],
-    "url": "https://api.aiservices.to/v1/indicators/BTC",
+    "url": "https://agentservices.to/v1/indicators/BTC",
     "wallet": "0x9863aB6242663FCc84c33632741711dB78f8Fd15",
     "website": "https://agentservices.to",
     "verified": true,
