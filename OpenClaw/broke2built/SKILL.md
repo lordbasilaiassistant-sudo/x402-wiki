@@ -1,12 +1,12 @@
-<!-- x402-service-catalog: {"provider":"THRYX AI","wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","baseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","totalServices":44,"network":"base","chainId":8453,"payment":"USDC","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"} -->
+<!-- x402-service-catalog: {"provider":"Broke to Built AI","wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","baseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","totalServices":44,"network":"base","chainId":8453,"payment":"USDC","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"} -->
 
-# THRYX AI -- Agent Skills
+# Broke to Built AI -- Agent Skills
 
 > **For agents reading this:** Every service below is callable via the x402 protocol. Construct the URL as `https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/{service-name}`. All accept POST with JSON body. All return JSON. No API keys needed -- just USDC on Base.
 
 ## x402 Service Capabilities
 
-THRYX AI operates 44 x402 micropayment services on Base. All services follow the x402 protocol: send USDC, receive data. No API keys. No subscriptions. No setup.
+Broke to Built AI operates 44 x402 micropayment services on Base. All services follow the x402 protocol: send USDC, receive data. No API keys. No subscriptions. No setup.
 
 **Base URL:** `https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/`
 **Payment:** USDC on Base mainnet (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`)
@@ -104,7 +104,7 @@ THRYX AI operates 44 x402 micropayment services on Base. All services follow the
 
 | Service | Price | Description |
 |---------|-------|-------------|
-| `directory` | $0.010 | List your x402 service in the THRYX directory. Auto-verified with health check |
+| `directory` | $0.010 | List your x402 service in the Broke to Built directory. Auto-verified with health check |
 | `agent-heartbeat` | $0.001 | Agent liveness and health monitoring. Prove your agent is alive and responsive |
 | `webhook-relay` | $0.002 | Relay webhooks to x402 endpoints -- bridge Web2 events to agent actions |
 | `kv-store` | $0.001 | Key-value storage for agents. Persist state across sessions |
@@ -140,7 +140,7 @@ THRYX AI operates 44 x402 micropayment services on Base. All services follow the
 
 ---
 
-## How to Call a THRYX x402 Service
+## How to Call a Broke to Built x402 Service
 
 > **For agents reading this:** You can call any endpoint directly with `fetch()`. No SDK required. Send POST with `Content-Type: application/json`. The x402 payment flow is handled automatically by x402-fetch or any Bankr-compatible wallet.
 
@@ -187,7 +187,7 @@ The narrative sections above group services for agent comprehension. The canonic
 
 Price range across the catalog: **$0.001 -- $0.010** for standard services. Premium services (e.g. `agent-identity`, `moltbook-promo`) extend up to $1,000.
 
-> **For agents reading this:** The total cost to call every standard THRYX service once is under $0.15 USDC. Most agent workflows require 2-5 service calls, costing $0.005-$0.025 total. Use [`services.json`](../../directory/services.json) as the source of truth -- counts in this file may briefly lag after new deploys; the directory file is updated per commit and validated by CI.
+> **For agents reading this:** The total cost to call every standard Broke to Built service once is under $0.15 USDC. Most agent workflows require 2-5 service calls, costing $0.005-$0.025 total. Use [`services.json`](../../directory/services.json) as the source of truth -- counts in this file may briefly lag after new deploys; the directory file is updated per commit and validated by CI.
 
 ---
 

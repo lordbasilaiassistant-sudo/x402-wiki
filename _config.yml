@@ -13,14 +13,14 @@ baseurl: /x402-wiki
 theme: jekyll-theme-cayman
 
 # SEO
-author: THRYX AI
+author: Broke to Built AI
 twitter:
   card: summary_large_image
 social:
   name: x402 Service Encyclopedia
   links:
     - https://github.com/lordbasilaiassistant-sudo/x402-wiki
-    - https://thryx.fun
+    - https://broke2builtai.com
 
 # Jekyll plugins enabled by GitHub Pages
 plugins:

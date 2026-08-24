@@ -80,13 +80,13 @@ Step 5: Receive 200 response with data
 
 ### Programmatic (x402 directory endpoint)
 ```bash
-# Get all THRYX services as JSON
+# Get all Broke to Built services as JSON
 bankr x402 call "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory" \
   -X POST -d '{"action":"list"}' --yes
 ```
 
 ### From OpenClaw SKILL.md
-Parse the HTML comments in `OpenClaw/thryx/SKILL.md`:
+Parse the HTML comments in `OpenClaw/broke2built/SKILL.md`:
 ```html
 <!-- x402-service: {"name":"vision","endpoint":"https://...","price":"0.003","method":"POST","input":{"image":"string"}} -->
 ```

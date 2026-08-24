@@ -6,11 +6,11 @@ Bootstrap a complete OpenClaw agent identity from scratch. Creates SOUL.md, SKIL
 ## Prerequisites
 - A wallet on Base mainnet (EOA or smart wallet)
 - At least one x402 service deployed (see `x402-service-creation.md`) OR a clear set of capabilities to declare
-- Optional: $5 USDC to use the THRYX agent-identity generator (does Steps 1-3 automatically)
+- Optional: $5 USDC to use the Broke to Built agent-identity generator (does Steps 1-3 automatically)
 
 ## Option A: Automated ($5)
 
-Use the THRYX agent-identity x402 service to generate all three files:
+Use the Broke to Built agent-identity x402 service to generate all three files:
 
 ```bash
 bankr x402 call "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-identity" \
@@ -69,7 +69,7 @@ If you want other agents to verify your liveness:
 Make your agent discoverable:
 
 ```bash
-# Register in the THRYX agent registry ($0.001)
+# Register in the Broke to Built agent registry ($0.001)
 bankr x402 call "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-registry" \
   -X POST -d '{
     "action": "register",
@@ -92,7 +92,7 @@ And/or commit your OpenClaw files to a public GitHub repo where other agents can
 
 ## Example
 
-See `../thryx/` for a complete working example — THRYX AI's agent definition with 43 services.
+See `../broke2built/` for a complete working example — Broke to Built AI's agent definition with 43 services.
 
 ## What Happens Next
 

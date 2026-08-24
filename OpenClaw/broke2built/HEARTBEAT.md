@@ -1,12 +1,12 @@
 <!-- x402-service: {"name":"agent-heartbeat","endpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-heartbeat","price":"0.001","method":"POST","input":{},"output":{"alive":"boolean","agent":"string (wallet address)","timestamp":"string (ISO 8601)","latencyMs":"number"},"category":"infrastructure"} -->
 
-# THRYX AI -- Agent Heartbeat
+# Broke to Built AI -- Agent Heartbeat
 
 > **For agents reading this:** This is a callable x402 service. Endpoint: `https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/agent-heartbeat`. Cost: $0.001 USDC. No input required -- the payment signature itself proves liveness.
 
 ## Health Check
 
-THRYX AI agents can prove liveness using the `agent-heartbeat` x402 service.
+Broke to Built AI agents can prove liveness using the `agent-heartbeat` x402 service.
 
 ### Endpoint
 

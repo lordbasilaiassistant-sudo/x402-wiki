@@ -6,11 +6,11 @@ The x402 protocol lets an AI agent call any HTTP endpoint and pay per call: the 
 
 ## Machine-readable catalogs
 
-- [directory/services.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json): All 44 verified THRYX AI services as structured JSON (id, name, category, price, description, url, wallet, input schema).
+- [directory/services.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json): All 44 verified Broke to Built AI services as structured JSON (id, name, category, price, description, url, wallet, input schema).
 - [directory/apify-actors.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/apify-actors.json): All 82 EliAI Apify Actors callable via x402, with per-event USD pricing, 30-day all-user success rates, and the complete prepaid-token payment flow.
 - [Live directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory): Always-current catalog served as an x402-paid POST endpoint ($0.01 USDC); doubles as a listing endpoint for new services.
 
-## Verified THRYX AI services (44)
+## Verified Broke to Built AI services (44)
 
 First-party services across eight categories, each independently tested and rated 1-5 stars on functionality, speed, value, novelty, and honesty. Payment wallet (Base, EIP-55): 0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5.
 
@@ -47,9 +47,9 @@ Providers submitted via issue, health-checked but not yet first-party paid-teste
 
 OpenClaw-compatible structured definitions for autonomous agents, plus protocol guides.
 
-- [SOUL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/SOUL.md): THRYX AI agent personality and identity definition.
-- [SKILL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/SKILL.md): All 44 services as machine-parseable HTML-comment metadata with endpoints, pricing, and input schemas.
-- [CONSTITUTION.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/CONSTITUTION.md): Rules, safety constraints, content standards.
+- [SOUL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/broke2built/SOUL.md): Broke to Built AI agent personality and identity definition.
+- [SKILL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/broke2built/SKILL.md): All 44 services as machine-parseable HTML-comment metadata with endpoints, pricing, and input schemas.
+- [CONSTITUTION.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/broke2built/CONSTITUTION.md): Rules, safety constraints, content standards.
 - [How x402 works](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/x402-protocol/how-it-works.md): Protocol walkthrough and ecosystem stats.
 - [Integration guide](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/x402-protocol/integration-guide.md): Code examples for calling x402 services.
 

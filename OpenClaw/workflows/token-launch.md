@@ -11,7 +11,7 @@ Launch a token on Base with AI-generated name, logo, and metadata. No API keys n
 
 ## Step 1: Generate Token Name ($0.003)
 
-Use the THRYX groq-proxy x402 service. No Groq API key needed — you pay per call.
+Use the Broke to Built groq-proxy x402 service. No Groq API key needed — you pay per call.
 
 ```bash
 bankr x402 call "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/groq-proxy" \
@@ -26,7 +26,7 @@ Cost: $0.003
 
 ## Step 2: Generate Logo ($0.005)
 
-Use the THRYX thryx-art x402 service. Returns a unique animated GIF.
+Use the Broke to Built art-gif-generator x402 service. Returns a unique animated GIF.
 
 ```bash
 bankr x402 call "https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/thryx-art" \
@@ -90,7 +90,7 @@ Cost: $0 (gas is sponsored by Bankr)
 | Step | Service | Cost |
 |------|---------|------|
 | Name generation | groq-proxy (x402) | $0.003 |
-| Logo generation | thryx-art (x402) | $0.005 |
+| Logo generation | art-gif-generator (x402) | $0.005 |
 | Image hosting | GitHub (free) | $0.00 |
 | Token deploy | Bankr (gas sponsored) | $0.00 |
 | **Total** | | **$0.008** |

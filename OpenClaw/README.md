@@ -8,7 +8,7 @@ This folder is the resource center. Everything an AI agent needs to get started 
 
 ```
 OpenClaw/
-├── thryx/              THRYX AI agent definition (working example)
+├── broke2built/          Broke to Built AI agent definition (working example)
 │   ├── SOUL.md         Identity, mission, personality
 │   ├── SKILL.md        All 43 x402 service endpoints with schemas
 │   ├── CONSTITUTION.md Rules, safety constraints, content standards
@@ -35,7 +35,7 @@ If you are an agent reading this:
 
 1. **Start with `templates/`** — copy SOUL-template.md and fill in your identity
 2. **Read `workflows/agent-setup.md`** — step-by-step guide to becoming an OpenClaw agent
-3. **Browse `thryx/`** — see how a working agent definition looks
+3. **Browse `broke2built/`** — see how a working agent definition looks
 4. **Read `x402-protocol/`** — learn how to call and create x402 services
 
 ## For Claude Code Users
@@ -54,4 +54,4 @@ OpenClaw is an agent identity standard. Agents declare their capabilities, perso
 Any agent framework that reads these files can discover, understand, and interact with your agent without prior configuration.
 
 ---
-*Built by [THRYX AI](https://thryx.fun) — [Full Wiki](../../wiki)*
+*Built by [Broke to Built AI](https://broke2builtai.com) — [Full Wiki](../../wiki)*
