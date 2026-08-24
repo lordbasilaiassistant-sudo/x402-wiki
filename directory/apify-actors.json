@@ -1,0 +1,2453 @@
+{
+    "source":  "Apify Store - user eliai",
+    "updated":  "2026-08-24",
+    "count":  82,
+    "eligibility":  "All listed Actors are whitelisted for Apify agentic payments (Apify Store API field isWhiteListedForAgenticPayments): pure pay-per-event pricing, charges events only, limited permissions, no standby mode, developer KYC verified.",
+    "paymentFlow":  {
+                        "gateway":  "https://agi.apify.com",
+                        "network":  "base",
+                        "chainId":  8453,
+                        "token":  "USDC",
+                        "tokenAddress":  "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                        "minimumPurchaseUsd":  1,
+                        "steps":  [
+                                      "Authenticate Coinbase Agentic Wallet: npx awal auth login \u003cemail\u003e then npx awal auth verify \u003ccode\u003e",
+                                      "Fund wallet with USDC on Base plus ~0.000001 ETH for one-time wallet deployment gas",
+                                      "Buy prepaid token: npx awal x402 pay \u0027https://agi.apify.com/protocols/x402/prepaid-tokens?amount=1\u0026currency=usd\u0027",
+                                      "Run any Actor below with the prepaid token as Bearer: POST https://api.apify.com/v2/actors/\u003cuser\u003e~\u003cactor\u003e/run-sync-get-dataset-items",
+                                      "Token balance is an absolute spending cap and expires 14 days after purchase"
+                                  ],
+                        "docs":  "https://docs.apify.com/integrations/x402",
+                        "agentSkill":  "https://raw.githubusercontent.com/apify/awesome-skills/refs/heads/main/skills/apify-x402-agentic-wallet/SKILL.md"
+                    },
+    "actors":  [
+                   {
+                       "id":  "excel-to-json",
+                       "name":  "Excel to JSON Converter — XLSX/XLS Spreadsheet, All Sheets API",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "ai"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Convert Excel to JSON via API. Input: a URL to an .xlsx or .xls spreadsheet. Output: JSON with every sheet as an array of row objects, headers detected automatically. Multi-sheet workbooks, bulk 25 files per run. $0.03 per workbook, every sheet included.",
+                       "url":  "https://apify.com/eliai/excel-to-json",
+                       "inputSchemaDoc":  "https://apify.com/eliai/excel-to-json",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  476,
+                                     "succeededLast30d":  475,
+                                     "successRatePct":  99.8,
+                                     "usersLast30d":  13,
+                                     "totalUsers":  16
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "File conversion",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "base64-encoder-decoder",
+                       "name":  "Base64 Encoder \u0026 Decoder API — Files, Text \u0026 Data URIs",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "ai"
+                                    ],
+                       "price":  "$0.0002 per primary event",
+                       "description":  "Encode text or any file URL to Base64 and get a ready-to-paste data: URI back, or decode Base64 to text and downloadable files. Batch input, URL-safe alphabet, strict validation. $0.0002 per text item, $0.0005 per file; failed items never charged.",
+                       "url":  "https://apify.com/eliai/base64-encoder-decoder",
+                       "inputSchemaDoc":  "https://apify.com/eliai/base64-encoder-decoder",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  229,
+                                     "succeededLast30d":  229,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  29,
+                                     "totalUsers":  39
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-converted",
+                                          "title":  "Text conversion",
+                                          "priceUsd":  0.0002
+                                      },
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "File conversion",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "audio-transcriber-whisper",
+                       "name":  "Audio \u0026 Video to Text (Whisper) — Transcript + SRT Subtitles",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "ai",
+                                        "automation",
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Speech-to-text for any direct audio or video URL: podcasts, MP3, WAV, M4A, MP4. Whisper runs inside the actor, so there are no API keys to hold. Returns plain text, timestamped segments and a ready SRT file. $0.03 per started audio-minute; failures never charged.",
+                       "url":  "https://apify.com/eliai/audio-transcriber-whisper",
+                       "inputSchemaDoc":  "https://apify.com/eliai/audio-transcriber-whisper",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  44,
+                                     "succeededLast30d":  18,
+                                     "successRatePct":  40.9,
+                                     "usersLast30d":  16,
+                                     "totalUsers":  18
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "audio-minute",
+                                          "title":  "Transcribed audio minutes",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "pdf-text-extractor",
+                       "name":  "PDF Text Extractor — PDF URL to Text \u0026 Metadata API",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "ai",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.003 per primary event",
+                       "description":  "Extract full text and metadata from any PDF URL: pages, characters, title/author/dates, bulk up to 50 PDFs per run. Built for RAG, document QA, and agent pipelines (Apify MCP). Flat $0.003 per PDF — no start fee, failed or non-PDF URLs never charged.",
+                       "url":  "https://apify.com/eliai/pdf-text-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/pdf-text-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  6,
+                                     "totalUsers":  6
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "pdf-processed",
+                                          "title":  "Processed PDFs",
+                                          "priceUsd":  0.003
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-images-extractor",
+                       "name":  "Image Extractor — Every Image URL on a Page, With Alt Text",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Extract every image on a web page as JSON: absolute src, alt text, width/height, loading, srcset, plus og:image and twitter:image. Built for alt-text and asset audits. Returns image URLs and metadata, not the image files. $0.01 per page scanned; failures free.",
+                       "url":  "https://apify.com/eliai/webpage-images-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-images-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  36,
+                                     "succeededLast30d":  36,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  2,
+                                     "totalUsers":  5
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Page scan",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-color-palette",
+                       "name":  "Website Color Palette Extractor - Hex Colors from URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Extract a website\u0027s color palette - hex/rgb/hsl from styles and theme-color meta - normalized and ranked by frequency. Single or bulk. $0.0008 per page no start fee, cheaper than paid palette actors; failed fetches free.",
+                       "url":  "https://apify.com/eliai/webpage-color-palette",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-color-palette",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  15,
+                                     "succeededLast30d":  15,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  3,
+                                     "totalUsers":  4
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "website-screenshot-pro",
+                       "name":  "Website Screenshot — Full Page, Lazy-Load Safe, Batch, Mobile",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0048 per primary event",
+                       "description":  "Full-page website screenshots that wait for lazy-loaded images and fonts, and dismiss cookie banners. Batch up to 100 URLs, desktop/mobile/retina, dark mode, PNG or JPEG. $0.0048 per screenshot produced — failed URLs never charged.",
+                       "url":  "https://apify.com/eliai/website-screenshot-pro",
+                       "inputSchemaDoc":  "https://apify.com/eliai/website-screenshot-pro",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  18,
+                                     "succeededLast30d":  18,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "screenshot-captured",
+                                          "title":  "Captured screenshots",
+                                          "priceUsd":  0.0048
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "youtube-comments-extractor",
+                       "name":  "YouTube Comments Scraper — Replies, Exact Likes, Top/Newest",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "social_media",
+                                        "lead_generation",
+                                        "videos"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Extract YouTube video comments without API keys or cookies: top-level + replies, top or newest sort, exact like counts (not rounded), author channel IDs, batch videos. $0.0004 per comment — cheaper than comparable scrapers. Videos with disabled comments are never charged.",
+                       "url":  "https://apify.com/eliai/youtube-comments-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/youtube-comments-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  18,
+                                     "succeededLast30d":  18,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  2,
+                                     "totalUsers":  3
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "comment-extracted",
+                                          "title":  "Extracted comments",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-forms-extractor",
+                       "name":  "Web Form Extractor - Fields, Method \u0026 Action from URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Extract all forms from any page with action, method, enctype and every field (name/type), plus password/email/file flags. Single or bulk. $0.001 per page. Failed fetches are recorded free.",
+                       "url":  "https://apify.com/eliai/webpage-forms-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-forms-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "dmarc-record-checker",
+                       "name":  "DMARC Record Checker - Fetch, Parse \u0026 Grade DMARC Policy",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "lead_generation",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Check DMARC for up to 200 domains per run: policy, pct, rua/ruf reports, grade (enforced/monitor/missing) and plain-English issues. $0.0008 per domain, no start fee, failures never charged — cheaper than measured incumbents ($0.001-$0.05/domain). For security audits, deliverability and lead gen.",
+                       "url":  "https://apify.com/eliai/dmarc-record-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/dmarc-record-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  3,
+                                     "succeededLast30d":  3,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "DMARC-checked domains",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-feed-finder",
+                       "name":  "RSS Feed Finder - Discover All Feeds on Any Website",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Discover every feed a site exposes: declared link rel=alternate RSS/Atom/JSON plus common feed paths, validated \u0026 de-duplicated. Bulk. $0.0004 per page, cheaper than the measured comparable; failed fetches free.",
+                       "url":  "https://apify.com/eliai/webpage-feed-finder",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-feed-finder",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  6,
+                                     "succeededLast30d":  6,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-tech-detector",
+                       "name":  "Website Technology Detector API — CMS, Frameworks, CDN",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Detect what a website is built with via API. Input: a site URL. Output: JSON list of detected technologies — CMS (WordPress, Shopify), JS frameworks (React, Vue, Next.js), analytics, CDNs — from HTML and header signatures. Pay per result: $0.02 per page scanned.",
+                       "url":  "https://apify.com/eliai/webpage-tech-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-tech-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Page scan",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-structured-data-extractor",
+                       "name":  "Structured Data Extractor - JSON-LD, Microdata, RDFa",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Extract all structured data from any page - JSON-LD, Microdata, and RDFa - plus the schema.org types found. Single or bulk. $0.0004 per page, cheaper than every paid structured-data actor measured; failed fetches are free.",
+                       "url":  "https://apify.com/eliai/webpage-structured-data-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-structured-data-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  9,
+                                     "succeededLast30d":  9,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "html-to-markdown",
+                       "name":  "HTML to Markdown Converter - URL or HTML to GFM",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0015 per primary event",
+                       "description":  "Convert a page (by URL) or raw HTML to clean GitHub-Flavored Markdown - headings, links, fenced code, tables, strikethrough. Single, bulk, or inline HTML. $0.0015 per page no start fee, cheaper than paid converters; failed fetches free.",
+                       "url":  "https://apify.com/eliai/html-to-markdown",
+                       "inputSchemaDoc":  "https://apify.com/eliai/html-to-markdown",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  9,
+                                     "succeededLast30d":  9,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-converted",
+                                          "title":  "Converted pages",
+                                          "priceUsd":  0.0015
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-favicon-extractor",
+                       "name":  "Favicon Extractor - All Icons, Sizes \u0026 Types from URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Find every icon a site declares - link icons, apple-touch, mask-icon, web-manifest icons, favicon.ico fallback - with sizes/types and a best-icon pick. Single or bulk. $0.0004 per page, cheaper than paid favicon actors; failed fetches free.",
+                       "url":  "https://apify.com/eliai/webpage-favicon-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-favicon-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  10,
+                                     "succeededLast30d":  10,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-readability-grade",
+                       "name":  "Webpage Readability Grade - Main Content, 6 Formulas",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.002 per primary event",
+                       "description":  "Grade any URL\u0027s readability the honest way: main content extracted first (nav/footer/sidebar boilerplate stripped, \u003cmain\u003e/\u003carticle\u003e preferred), then Flesch, FK, Fog, SMOG, ARI, Coleman-Liau + level label. Up to 100 URLs per run. $0.002 per page, HTTP errors never charged.",
+                       "url":  "https://apify.com/eliai/webpage-readability-grade",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-readability-grade",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Graded pages",
+                                          "priceUsd":  0.002
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-keyword-density",
+                       "name":  "Webpage Keyword Density - Main-Content SEO + Cloud Weights",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.002 per primary event",
+                       "description":  "Keyword density of any URL\u0027s MAIN content (nav/footer boilerplate stripped first): ranked unigrams + bigrams + trigrams with density %, plus 1-100 word-cloud weights. Up to 50 URLs per run. $0.002 per page vs $0.011-$0.093 measured incumbents; HTTP errors never charged. Extraction scope reported.",
+                       "url":  "https://apify.com/eliai/webpage-keyword-density",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-keyword-density",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  12,
+                                     "succeededLast30d":  12,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Analyzed pages",
+                                          "priceUsd":  0.002
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-comment-extractor",
+                       "name":  "HTML Comment Extractor - Find Hidden Notes in a URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Extract HTML comments from any page and flag sensitive ones - TODO/FIXME, passwords, API keys, tokens, internal notes. Single or bulk. $0.001 per page. Failed fetches are recorded free.",
+                       "url":  "https://apify.com/eliai/webpage-comment-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-comment-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "ssl-certificate-checker",
+                       "name":  "SSL Certificate Checker - Issuer, SANs, Expiry, Chain JSON",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Live TLS handshake for up to 200 hosts per run: issuer, SANs, days-to-expiry, full chain walk, negotiated protocol, self-signed/expired diagnosis with exact error. $0.0008 per host, no start fee, unreachable hosts never charged — cheaper than measured incumbents ($0.001-$0.035).",
+                       "url":  "https://apify.com/eliai/ssl-certificate-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/ssl-certificate-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  16,
+                                     "succeededLast30d":  16,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "host-checked",
+                                          "title":  "Certificate-checked hosts",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "csv-to-json",
+                       "name":  "CSV to JSON Converter - Convert CSV by URL or Text API",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Convert CSV to JSON via API - from a file URL or pasted raw text (fields: url or csv). Auto-detects delimiter (comma, tab, semicolon, pipe), types values (numbers, booleans, dates), handles quoted fields. Returns JSON records plus a column/type report. $0.02 per file.",
+                       "url":  "https://apify.com/eliai/csv-to-json",
+                       "inputSchemaDoc":  "https://apify.com/eliai/csv-to-json",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "File conversion",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "dns-records-lookup",
+                       "name":  "DNS Records Lookup - All Record Types for Any Domain",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Look up every DNS record type for a domain in one call. Input: domains (list). Output: JSON per domain with A, AAAA, MX, TXT, NS, CNAME, SOA, CAA, SRV, PTR records and values. Cheap pay-per-result: $0.02 per domain checked.",
+                       "url":  "https://apify.com/eliai/dns-records-lookup",
+                       "inputSchemaDoc":  "https://apify.com/eliai/dns-records-lookup",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  27,
+                                     "succeededLast30d":  27,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "Domain lookup",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "rss-feed-parser",
+                       "name":  "RSS Feed Parser — Convert Any RSS or Atom Feed to Clean JSON",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "RSS feed parser for developers and AI agents: pass any RSS or Atom feed URL as input and get back clean, structured JSON items (title, link, date, and other feed fields). $0.02 per feed parsed — cost scales with feeds, nothing hidden.",
+                       "url":  "https://apify.com/eliai/rss-feed-parser",
+                       "inputSchemaDoc":  "https://apify.com/eliai/rss-feed-parser",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "feed-parsed",
+                                          "title":  "Parsed feed",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "text-sentiment-analyzer",
+                       "name":  "Sentiment Analysis API - Score Any Text, No API Key",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "ai",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Sentiment analysis for any text via API. Input: text string(s). Output: JSON with sentiment label (positive/negative/neutral), normalized score, comparative score, and the driver words. Lexicon-based, no API key. Cheap pay-per-result: $0.01 per text analyzed.",
+                       "url":  "https://apify.com/eliai/text-sentiment-analyzer",
+                       "inputSchemaDoc":  "https://apify.com/eliai/text-sentiment-analyzer",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  27,
+                                     "succeededLast30d":  27,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Sentiment check",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-text-extractor",
+                       "name":  "Webpage Text Extractor — URL to Clean Text \u0026 Markdown",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Pass article or page URLs; get back the clean, readable main text as Markdown or plain text, one result per URL, with ads, navigation and boilerplate stripped by a readability heuristic. Links resolved to absolute URLs. $0.03 per page. Built for RAG pipelines, AI agents and content workflows.",
+                       "url":  "https://apify.com/eliai/webpage-text-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-text-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-extracted",
+                                          "title":  "Text extraction",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-metadata-extractor",
+                       "name":  "Webpage Metadata Extractor - OpenGraph, Twitter Cards, JSON-LD",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Extract webpage metadata from any URL. Input a URL, get one JSON record with the page title, meta tags, OpenGraph, Twitter Card, and JSON-LD structured data. $0.02 per page analyzed — for link previews, SEO checks, and AI agent pipelines.",
+                       "url":  "https://apify.com/eliai/webpage-metadata-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-metadata-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-analyzed",
+                                          "title":  "Metadata extraction",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "spf-record-checker",
+                       "name":  "SPF Record Checker - Validate SPF \u0026 Count DNS Lookups",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "lead_generation",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Validate SPF for up to 200 domains per run: parsed mechanisms, DNS lookup count vs the RFC 7208 limit of 10, all-qualifier and plain-English issues. $0.0008 per domain, no start fee, failures never charged — cheaper than measured incumbents ($0.001+/item). For deliverability and security audits.",
+                       "url":  "https://apify.com/eliai/spf-record-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/spf-record-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  3,
+                                     "succeededLast30d":  3,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "SPF-checked domains",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "xml-to-json",
+                       "name":  "XML to JSON Converter - Any XML File or Feed to Clean JSON",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "mcp_servers"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Convert any well-formed XML by URL into clean JSON - attributes preserved, repeated elements as arrays, root element reported. Configs, API responses, RSS feeds, sitemaps. $0.02 per file; fetch/parse failures are free.",
+                       "url":  "https://apify.com/eliai/xml-to-json",
+                       "inputSchemaDoc":  "https://apify.com/eliai/xml-to-json",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  2,
+                                     "succeededLast30d":  2,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "text-entity-extractor",
+                       "name":  "Text Entity Extractor - Emails, Phones, URLs, Dates, Money",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "lead_generation",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Regex extraction of 11 structured entity types from up to 100 texts per run: emails, phones, URLs, IPs, dates, times, money, percentages, hashtags, mentions + Luhn-checked ALWAYS-MASKED cards. Not model NER — exact, private, in-process. $0.0008 per text all types, junk entries never charged.",
+                       "url":  "https://apify.com/eliai/text-entity-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/text-entity-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  5,
+                                     "succeededLast30d":  5,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Scanned texts",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "text-language-detector",
+                       "name":  "Text Language Detector - ISO 639-3 + Confidence, 82 Langs",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "ai",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Detect the language of up to 200 texts per run: ISO 639-3 code, English name, confidence and ranked alternatives (franc trigram model, in-process, texts never leave the run). $0.0005 per text — half the measured incumbent ($0.001); too-short snippets never charged. For routing and dataset splitting.",
+                       "url":  "https://apify.com/eliai/text-language-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/text-language-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  5,
+                                     "succeededLast30d":  5,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Detected languages",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "barcode-generator",
+                       "name":  "Barcode Generator - 15 Symbologies, Real Check Digits",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0015 per primary event",
+                       "description":  "Barcode PNGs by API: QR, Code128, EAN-13/8, UPC-A/E, ITF-14, DataMatrix, PDF417, Aztec + more (bwip-js engine). Retail check digits VALIDATED — a wrong EAN check digit is rejected free, not rendered broken (release-tested). $0.0015 per barcode vs $0.002-$0.004 measured incumbents. 50 per run.",
+                       "url":  "https://apify.com/eliai/barcode-generator",
+                       "inputSchemaDoc":  "https://apify.com/eliai/barcode-generator",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  5,
+                                     "succeededLast30d":  5,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "barcode-generated",
+                                          "title":  "Generated barcodes",
+                                          "priceUsd":  0.0015
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "text-readability-analyzer",
+                       "name":  "Text Readability Analyzer - 6 Formulas, Grade + Tips",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "ai"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Score up to 100 texts per run with Flesch, Flesch-Kincaid, Gunning Fog, SMOG, ARI and Coleman-Liau + consensus grade, audience label and concrete fix-it tips. $0.0004 per text all six formulas, no start fee, word-free inputs never charged — vs $0.0005-$0.015 measured incumbents.",
+                       "url":  "https://apify.com/eliai/text-readability-analyzer",
+                       "inputSchemaDoc":  "https://apify.com/eliai/text-readability-analyzer",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  5,
+                                     "succeededLast30d":  5,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Scored texts",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "csv-profiler",
+                       "name":  "CSV Profiler - Instant Data Quality Report for Any CSV",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "ai",
+                                        "automation"
+                                    ],
+                       "price":  "$0.003 per primary event",
+                       "description":  "Profile any CSV by URL or paste: per-column types, null rates, unique counts, min/max/mean/median/stddev, top values, quality warnings (mostly-null, mixed-type, constants, identifiers). Up to 200k rows. $0.003 per file whatever its size, no start fee — vs $0.015+ measured incumbents.",
+                       "url":  "https://apify.com/eliai/csv-profiler",
+                       "inputSchemaDoc":  "https://apify.com/eliai/csv-profiler",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  6,
+                                     "succeededLast30d":  6,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-profiled",
+                                          "title":  "Profiled CSV files",
+                                          "priceUsd":  0.003
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "text-keyword-extractor",
+                       "name":  "Text Keyword Extractor - RAKE Phrases + Top Words as JSON",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "ai",
+                                        "developer_tools",
+                                        "seo_tools"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Extract ranked multi-word keyword phrases (RAKE-scored) + top words from up to 200 texts per run. For tagging, SEO briefs, ticket clustering, labeling scraped content. $0.0005 per text, no start fee, junk entries never charged. No paid keyword-extraction rival with defined pricing measured.",
+                       "url":  "https://apify.com/eliai/text-keyword-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/text-keyword-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  6,
+                                     "succeededLast30d":  6,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Analyzed texts",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "jsonpath-extractor",
+                       "name":  "JSONPath Extractor - Query JSON, Get Pointers + Values",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Evaluate up to 50 JSONPath expressions against pasted JSON or a URL: every match returned with its JSON Pointer and value, filters/wildcards/recursive descent supported (jsonpath-plus 10.3). $0.0005 per expression, no start fee, invalid expressions never charged. No paid JSONPath rival measured.",
+                       "url":  "https://apify.com/eliai/jsonpath-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/jsonpath-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  7,
+                                     "succeededLast30d":  7,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "query-run",
+                                          "title":  "Ran JSONPath queries",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "markdown-to-html",
+                       "name":  "Markdown to HTML Converter - GitHub-Flavored, Safe",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Convert Markdown to safe GitHub-flavored HTML by URL or text - anchored headings, table of contents, script/iframe stripping. Bulk. $0.0005 per conversion; failures are free.",
+                       "url":  "https://apify.com/eliai/markdown-to-html",
+                       "inputSchemaDoc":  "https://apify.com/eliai/markdown-to-html",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  7,
+                                     "succeededLast30d":  7,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "yaml-to-json",
+                       "name":  "YAML to JSON Converter (and JSON to YAML) API",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Convert YAML to JSON and JSON to YAML by text or URL, with auto-direction detection and line-numbered errors. Bulk. $0.0004 per file, far below paid converters; failures are free.",
+                       "url":  "https://apify.com/eliai/yaml-to-json",
+                       "inputSchemaDoc":  "https://apify.com/eliai/yaml-to-json",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  7,
+                                     "succeededLast30d":  7,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "profanity-detector",
+                       "name":  "Profanity Detector - Wordlist Filter, Catches f*ck \u0026 f4ck",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "ai",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Screen up to 1,000 texts per run against a tiered profanity wordlist with obfuscation heuristics (leet, spacing, partial masks) — severity, exact positions, masked cleanedText, Scunthorpe-guarded boundaries. A filter, NOT an AI moderation system. $0.0004 per text, junk entries never charged.",
+                       "url":  "https://apify.com/eliai/profanity-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/profanity-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  4,
+                                     "succeededLast30d":  4,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "text-analyzed",
+                                          "title":  "Screened texts",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "json-to-csv",
+                       "name":  "JSON to CSV Converter - Flatten JSON to CSV, URL or Bulk",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "mcp_servers"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Convert a JSON file by URL into a downloadable CSV - column union across records, proper quoting, Excel-friendly CRLF, one CSV per array for object-of-arrays input. Up to 25 files a run. $0.02 per file; failures are free.",
+                       "url":  "https://apify.com/eliai/json-to-csv",
+                       "inputSchemaDoc":  "https://apify.com/eliai/json-to-csv",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  2,
+                                     "succeededLast30d":  2,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "disposable-email-detector",
+                       "name":  "Disposable Email Detector - Block Temp \u0026 Throwaway Emails",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Check up to 500 emails/domains per run against a 7,582-domain disposable blocklist + keyword and pattern heuristics, with ~30 legit webmail providers whitelisted. $0.0005 per check, no start fee, invalid inputs never charged — half the cheapest measured incumbent.",
+                       "url":  "https://apify.com/eliai/disposable-email-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/disposable-email-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  7,
+                                     "succeededLast30d":  7,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "email-checked",
+                                          "title":  "Disposability-checked email/domains",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "whois-lookup",
+                       "name":  "WHOIS Lookup API — Registrar, Dates \u0026 Status as Clean JSON",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.002 per primary event",
+                       "description":  "Input: a list of domains. Output: one JSON record per domain with registrar, registrant org, name servers, creation/expiry/updated dates, and status codes parsed from raw WHOIS. Run synchronously and get results back in the call. $0.002 per domain checked.",
+                       "url":  "https://apify.com/eliai/whois-lookup",
+                       "inputSchemaDoc":  "https://apify.com/eliai/whois-lookup",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  30,
+                                     "succeededLast30d":  30,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "Domain lookup",
+                                          "priceUsd":  0.002
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "subdomain-finder",
+                       "name":  "Subdomain Finder - CT Log Enumeration + Live DNS Check",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.005 per primary event",
+                       "description":  "Enumerate a domain\u0027s subdomains from Certificate Transparency logs, with an optional live DNS resolve. All subdomains in one record. $0.005 per domain (not per subdomain), far cheaper than paid finders; failures are free.",
+                       "url":  "https://apify.com/eliai/subdomain-finder",
+                       "inputSchemaDoc":  "https://apify.com/eliai/subdomain-finder",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  16,
+                                     "succeededLast30d":  16,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "Checked domains",
+                                          "priceUsd":  0.005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "sitemap-url-extractor",
+                       "name":  "Sitemap URL Extractor — Priced per Sitemap, Not per URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.005 per primary event",
+                       "description":  "Extract every URL from sitemap.xml, sitemap indexes (recursive), or a bare domain via robots.txt. Returns loc, lastmod, changefreq, priority. Priced per FILE, not per URL: $0.005 per sitemap parsed plus $0.015 per 1,000 URLs, so a 5,000-URL sitemap costs $0.08. Failures never charged.",
+                       "url":  "https://apify.com/eliai/sitemap-url-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/sitemap-url-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  18,
+                                     "succeededLast30d":  18,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "sitemap-parsed",
+                                          "title":  "Parsed sitemap files",
+                                          "priceUsd":  0.005
+                                      },
+                                      {
+                                          "event":  "urls-extracted-1000",
+                                          "title":  "Extracted URLs (per 1,000)",
+                                          "priceUsd":  0.015
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "email-deliverability-checker",
+                       "name":  "Email Deliverability Checker - MX, SPF, DMARC, DKIM Score",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.002 per primary event",
+                       "description":  "Audit MX + SPF + DMARC + DKIM (9 selectors) for up to 100 domains per run: weighted 0-100 score, letter grade and copy-paste fixes. $0.002 per domain with all four checks included, no start fee, and invalid inputs or DNS failures are never charged. For cold-email prep and lead qualification.",
+                       "url":  "https://apify.com/eliai/email-deliverability-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/email-deliverability-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "Deliverability-audited domains",
+                                          "priceUsd":  0.002
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "mx-record-checker",
+                       "name":  "MX Record Checker - Verify a Domain Can Receive Email",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Check MX records for up to 200 domains or email addresses per run: priority-sorted exchanges resolved to IPs, RFC 5321 implicit-MX fallback, canReceiveEmail verdict. $0.0004 per domain, no start fee, failures never charged — cheaper than measured incumbents. For list hygiene and lead qualification.",
+                       "url":  "https://apify.com/eliai/mx-record-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/mx-record-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  19,
+                                     "succeededLast30d":  19,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-checked",
+                                          "title":  "MX-checked domains",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "email-validator",
+                       "name":  "Email Verifier \u0026 Validator | Bulk Email List Verification",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "automation",
+                                        "mcp_servers"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Verify email addresses in bulk and clean your list before you send. Checks RFC syntax, live MX records and deliverability, flags role accounts and disposable domains — cutting bounces and protecting sender reputation. No mail is ever sent. $0.001 per email, 500 per run.",
+                       "url":  "https://apify.com/eliai/email-validator",
+                       "inputSchemaDoc":  "https://apify.com/eliai/email-validator",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  10,
+                                     "succeededLast30d":  10,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  2,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "email-validated",
+                                          "title":  "Validated emails",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "robots-rule-tester",
+                       "name":  "Robots Rule Tester - Would Google Crawl This URL?",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Test URLs against robots.txt with real Google semantics: longest-match, Allow wins ties, UA group selection (test Googlebot, GPTBot, ClaudeBot...), wildcards. Verdict + the exact rule that decided it + sitemaps. $0.0008 per URL, invalid URLs never charged — vs $0.001-$0.15 measured incumbents.",
+                       "url":  "https://apify.com/eliai/robots-rule-tester",
+                       "inputSchemaDoc":  "https://apify.com/eliai/robots-rule-tester",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "test-run",
+                                          "title":  "Tested URLs",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "outbound-link-auditor",
+                       "name":  "Outbound Link Auditor - Every External Link, Checked Live",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.005 per primary event",
+                       "description":  "Audit a page\u0027s external links with evidence per link: rel/nofollow/sponsored flags, unsafe target=_blank (tabnabbing), non-HTTPS, live HEAD/GET status probes + redirect resolution. Up to 1,000 links/page. $0.005 per page incl. probes vs $0.04 measured incumbent; unreachable pages never charged.",
+                       "url":  "https://apify.com/eliai/outbound-link-auditor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/outbound-link-auditor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  13,
+                                     "succeededLast30d":  13,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Audited pages",
+                                          "priceUsd":  0.005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "hash-generator",
+                       "name":  "Hash Generator - MD5, SHA-256, SHA-512 \u0026 HMAC",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0005 per primary event",
+                       "description":  "Generate MD5, SHA-1, SHA-256, SHA-512 and HMAC hashes of text or a fetched file, in hex and base64 - all algorithms in one call. Bulk. $0.0005 per input; failures are free.",
+                       "url":  "https://apify.com/eliai/hash-generator",
+                       "inputSchemaDoc":  "https://apify.com/eliai/hash-generator",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  4,
+                                     "succeededLast30d":  4,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "hash-generated",
+                                          "title":  "Generated hashes",
+                                          "priceUsd":  0.0005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "base64-tool",
+                       "name":  "Base64 Encode / Decode - Auto-Detect + Type Sniffing",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Encode or decode Base64 with auto-detection and content-type sniffing (PNG/JPEG/PDF/JSON/text). Standard or URL-safe. Bulk. $0.0004 per operation; empty input uncharged.",
+                       "url":  "https://apify.com/eliai/base64-tool",
+                       "inputSchemaDoc":  "https://apify.com/eliai/base64-tool",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  4,
+                                     "succeededLast30d":  4,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "operation-run",
+                                          "title":  "Run operations",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "user-agent-parser",
+                       "name":  "User-Agent Parser - Browser, OS, Device + Bot Detection",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Parse up to 1,000 User-Agent strings per run: browser + version, OS, device, engine, CPU, and isBot verdict covering search crawlers, AI crawlers (GPTBot, ClaudeBot...), HTTP libraries and monitors. $0.0004 per UA, no start fee, junk strings never charged. For log analysis and traffic audits.",
+                       "url":  "https://apify.com/eliai/user-agent-parser",
+                       "inputSchemaDoc":  "https://apify.com/eliai/user-agent-parser",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  4,
+                                     "succeededLast30d":  4,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "ua-parsed",
+                                          "title":  "Parsed user agents",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "jwt-decoder",
+                       "name":  "JWT Decoder - Header, Claims, Expiry (Decode Only, No Keys)",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.002 per primary event",
+                       "description":  "Decode up to 50 JWTs per run: header, payload, iss/sub/aud, humanized iat/exp/nbf, expiry verdict, security warnings (alg=none, no-expiry, sensitive claims). Decode ONLY — signatures never verified, tokens never transmitted anywhere. $0.002 per token vs $0.02 measured incumbent; malformed free.",
+                       "url":  "https://apify.com/eliai/jwt-decoder",
+                       "inputSchemaDoc":  "https://apify.com/eliai/jwt-decoder",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  4,
+                                     "succeededLast30d":  4,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "jwt-decoded",
+                                          "title":  "Decoded JWTs",
+                                          "priceUsd":  0.002
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "complete-site-audit",
+                       "name":  "Complete Site Audit — SEO, Security \u0026 Social Grade",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Full website health audit in one call: SEO, security headers, social tags, crawlability, and tech stack, scored into an A–F grade with one prioritized issue list. $0.05 per site audited. No API key.",
+                       "url":  "https://apify.com/eliai/complete-site-audit",
+                       "inputSchemaDoc":  "https://apify.com/eliai/complete-site-audit",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-analyzed",
+                                          "title":  "Analyzed pages",
+                                          "priceUsd":  0.03
+                                      },
+                                      {
+                                          "event":  "site-audited",
+                                          "title":  "Site audited (legacy)",
+                                          "priceUsd":  0.05
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "robots-txt-analyzer",
+                       "name":  "robots.txt Analyzer — Rules, Sitemaps \u0026 Crawl Blocks",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Parse and audit any site\u0027s robots.txt in one call: user-agent groups, allow/disallow rules, declared sitemaps, and crawl-block issues like an accidental site-wide Disallow. $0.02 per site analyzed. No API key.",
+                       "url":  "https://apify.com/eliai/robots-txt-analyzer",
+                       "inputSchemaDoc":  "https://apify.com/eliai/robots-txt-analyzer",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "robots-analyzed",
+                                          "title":  "robots.txt scan",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "social-preview-checker",
+                       "name":  "Social Preview \u0026 Open Graph Checker",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "See how any URL looks when shared on social: the rendered preview (title, description, image) from Open Graph and Twitter Card tags, with missing-tag issues flagged. $0.02 per URL checked. No API key.",
+                       "url":  "https://apify.com/eliai/social-preview-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/social-preview-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "preview-checked",
+                                          "title":  "Preview check",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "broken-link-checker",
+                       "name":  "Broken Link Checker: 404s \u0026 Dead Links w/ Status Codes",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Broken link checker: give it a start URL, it checks every link on the page and returns the broken ones as JSON — link URL and HTTP status code. $0.02 per page checked, so cost is bounded before you run. No API key.",
+                       "url":  "https://apify.com/eliai/broken-link-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/broken-link-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-checked",
+                                          "title":  "Page check",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "website-seo-tech-auditor",
+                       "name":  "SEO Audit Tool: Title, Meta, Schema, Robots, Sitemap",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.1 per primary event",
+                       "description":  "SEO audit for any URL or whole site: crawl mode finds redirect chains, broken links, duplicate titles; page mode checks title/meta, headings, schema, robots.txt, sitemap, canonical. Machine-readable JSON with a pre-sorted fix list. $0.10 per page audited, failures free.",
+                       "url":  "https://apify.com/eliai/website-seo-tech-auditor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/website-seo-tech-auditor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  31,
+                                     "succeededLast30d":  31,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  2,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-audited",
+                                          "title":  "Audited pages",
+                                          "priceUsd":  0.1
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "base-token-risk-scanner",
+                       "name":  "Base Token Risk Scanner - Honeypot Flags, Owner, Liquidity",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "agents",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Vet any Base (chainId 8453) token before buying. Input: a token contract address. Output: one JSON risk report with on-chain metadata, ownership-renounced status, live DEX liquidity and 24h volume, and explicit risk flags. Every record lists what it did NOT check. $0.01 per token, no key or wallet.",
+                       "url":  "https://apify.com/eliai/base-token-risk-scanner",
+                       "inputSchemaDoc":  "https://apify.com/eliai/base-token-risk-scanner",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "token-scanned",
+                                          "title":  "Token scan",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "email-list-verifier",
+                       "name":  "Bulk Email List Verifier - MX, Null-MX, Disposable, Typos",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "automation",
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Clean a list before you send it. Catches null-MX domains that guarantee a bounce, keeps implicit-MX domains other tools wrongly delete, flags typo domains that resolve anyway, and separates disposable from role addresses. Never charges for an address it could not resolve. $1.00 per 1,000.",
+                       "url":  "https://apify.com/eliai/email-list-verifier",
+                       "inputSchemaDoc":  "https://apify.com/eliai/email-list-verifier",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "email-verified",
+                                          "title":  "Verified emails",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "seo-audit-report",
+                       "name":  "White-Label SEO Audit Report (HTML)",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.04 per primary event",
+                       "description":  "Crawl a site and get back a finished audit report with your agency name and brand colour on it. Findings grouped by severity, each explaining why it costs traffic. Self-contained HTML that prints to PDF. One flat price per report — from $2.99 on paid plans.",
+                       "url":  "https://apify.com/eliai/seo-audit-report",
+                       "inputSchemaDoc":  "https://apify.com/eliai/seo-audit-report",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "report-generated",
+                                          "title":  "Generated SEO reports",
+                                          "priceUsd":  0.04
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "bulk-tech-stack-detector",
+                       "name":  "Bulk Tech Stack Detector",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Paste a list of domains and get what each one runs: CMS, framework, hosting, analytics, payments, support widgets. Every detection returns the evidence that proved it plus a confidence level, so a wrong row is auditable. From $0.002 per domain on paid plans; unreachable domains never charged.",
+                       "url":  "https://apify.com/eliai/bulk-tech-stack-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/bulk-tech-stack-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-analysed",
+                                          "title":  "Analysed domains",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "rss-change-monitor",
+                       "name":  "RSS Change Monitor — Only New \u0026 Updated Items",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "automation",
+                                        "developer_tools",
+                                        "news"
+                                    ],
+                       "price":  "$0.005 per primary event",
+                       "description":  "Watch RSS and Atom feeds and get only what changed since the last run. Keeps a baseline between scheduled runs, separates new items from edited ones, ignores tracking-parameter churn, and never floods you on run one. From $0.001 per feed checked on paid plans; failures free.",
+                       "url":  "https://apify.com/eliai/rss-change-monitor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/rss-change-monitor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  2,
+                                     "successRatePct":  7.1,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "feed-checked",
+                                          "title":  "Checked feeds",
+                                          "priceUsd":  0.005
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "json-to-excel",
+                       "name":  "JSON to Excel Converter - JSON to XLSX, by URL or Bulk",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "mcp_servers"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Convert JSON to an Excel spreadsheet by URL - arrays of records become clean XLSX sheets with headers, column widths set, one sheet per key for object-of-arrays. Built for scripts, pipelines, and AI agents. $0.03 per file; failures are free.",
+                       "url":  "https://apify.com/eliai/json-to-excel",
+                       "inputSchemaDoc":  "https://apify.com/eliai/json-to-excel",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  3,
+                                     "succeededLast30d":  3,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "company-enrichment",
+                       "name":  "Company Enrichment — Domain to Company Profile, With Sources",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Turn a list of domains into company profiles: name, description, logo, on-domain emails, phone, address, social profiles and tech stack. Every field cites the URL it came from, so you can audit any row. No API keys, no data broker. $0.02 per domain; failed fetches never charged.",
+                       "url":  "https://apify.com/eliai/company-enrichment",
+                       "inputSchemaDoc":  "https://apify.com/eliai/company-enrichment",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  1,
+                                     "succeededLast30d":  1,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "domain-enriched",
+                                          "title":  "Enriched domains",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "image-converter",
+                       "name":  "Image Converter — WebP · AVIF · JPEG · PNG (Resize + Batch)",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.004 per primary event",
+                       "description":  "Convert images between WebP, AVIF, JPEG, PNG, GIF and TIFF with optional resizing, quality control and metadata stripping. Batch URLs in, converted files plus signed download links and exact bytes saved out. $0.004 per image; failures never charged, demo run free.",
+                       "url":  "https://apify.com/eliai/image-converter",
+                       "inputSchemaDoc":  "https://apify.com/eliai/image-converter",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  24,
+                                     "succeededLast30d":  23,
+                                     "successRatePct":  95.8,
+                                     "usersLast30d":  2,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "image-converted",
+                                          "title":  "Image conversion",
+                                          "priceUsd":  0.004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "ai-readability-checker",
+                       "name":  "AI Readability Checker — Can ChatGPT \u0026 Claude Read Your Site?",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.05 per primary event",
+                       "description":  "Audit a site the way AI crawlers see it: robots.txt rules per bot (GPTBot, ClaudeBot, PerplexityBot), real per-bot fetches, and how much text exists before JavaScript runs. Weighted from crawler logs, not blog advice. $0.05 per audit.",
+                       "url":  "https://apify.com/eliai/ai-readability-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/ai-readability-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  8,
+                                     "succeededLast30d":  8,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "site-audited",
+                                          "title":  "Site audit",
+                                          "priceUsd":  0.05
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "youtube-transcript-clean",
+                       "name":  "YouTube Transcript Extractor — Clean Text, Timestamps \u0026 SRT",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "videos",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.004 per primary event",
+                       "description":  "Extract clean, deduplicated YouTube video transcripts: readable paragraphs, per-line timestamps, and SRT. Batch URLs, auto or manual captions, original-language preference. $0.004 per transcript — videos without captions are never charged.",
+                       "url":  "https://apify.com/eliai/youtube-transcript-clean",
+                       "inputSchemaDoc":  "https://apify.com/eliai/youtube-transcript-clean",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  17,
+                                     "succeededLast30d":  17,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "transcript-extracted",
+                                          "title":  "Extracted transcripts",
+                                          "priceUsd":  0.004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "core-web-vitals-checker",
+                       "name":  "Core Web Vitals Checker - Bulk PageSpeed \u0026 CrUX Reports",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Bulk Core Web Vitals audits via the official PageSpeed Insights API: score, LCP, CLS, TBT + real-user CrUX assessment per URL. $0.01/report, no start fee. Failed URLs are free.",
+                       "url":  "https://apify.com/eliai/core-web-vitals-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/core-web-vitals-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  16,
+                                     "succeededLast30d":  16,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "vitals-report",
+                                          "title":  "Vitals reports",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-headings-outliner",
+                       "name":  "Heading Structure Outliner - H1-H6 Outline + SEO Flags",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0015 per primary event",
+                       "description":  "Extract a page\u0027s H1-H6 heading structure as an ordered outline with SEO issue flags (missing/multiple H1, skipped levels). Single or bulk. $0.0015 per page, a fraction of paid SEO-audit actors; failed fetches are free.",
+                       "url":  "https://apify.com/eliai/webpage-headings-outliner",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-headings-outliner",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  11,
+                                     "succeededLast30d":  11,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  2
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0015
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "website-uptime-checker",
+                       "name":  "Website Uptime Checker — Is It Down? Status, SSL Monitor",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Check whether a website is up or down — a health check and uptime monitor without a subscription. Input: urls array. Output: JSON per URL with up/down, HTTP status, latency in ms, SSL validity. Schedule as a cron to monitor continuously. $0.01 per URL checked.",
+                       "url":  "https://apify.com/eliai/website-uptime-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/website-uptime-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "url-checked",
+                                          "title":  "Uptime check",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-font-detector",
+                       "name":  "Website Font Detector - Fonts Used on Any Page",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Detect the fonts a site uses: @font-face + web-font files, font-family stacks, and Google/Adobe/self-hosted/system sources. Bulk. $0.001 per page, cheaper than paid font/brand extractors; failed fetches free.",
+                       "url":  "https://apify.com/eliai/webpage-font-detector",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-font-detector",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  9,
+                                     "succeededLast30d":  9,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-cookie-scanner",
+                       "name":  "Cookie Scanner - GDPR \u0026 Security Audit for Any URL",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0008 per primary event",
+                       "description":  "Scan a page\u0027s cookies: each Set-Cookie parsed with Secure/HttpOnly/SameSite/expiry, third-party \u0026 tracker flags, GDPR category, security issues. Bulk. $0.0008 per page, cheaper than paid GDPR scanners; failed fetches free.",
+                       "url":  "https://apify.com/eliai/webpage-cookie-scanner",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-cookie-scanner",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  12,
+                                     "succeededLast30d":  12,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Scanned pages",
+                                          "priceUsd":  0.0008
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "qr-code-generator",
+                       "name":  "QR Code Generator API — Hosted PNG and SVG, URL/WiFi/vCard",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Generate QR codes via API. Input: content (URL, text, WiFi, vCard and more) plus optional size, margin, colors, and error-correction level. Output: hosted PNG and SVG image URLs ready to embed or download. $0.02 per QR code generated.",
+                       "url":  "https://apify.com/eliai/qr-code-generator",
+                       "inputSchemaDoc":  "https://apify.com/eliai/qr-code-generator",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "qr-generated",
+                                          "title":  "QR code",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-links-extractor",
+                       "name":  "Link Extractor - All Links from Any Page with Anchor Text",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.01 per primary event",
+                       "description":  "Extract every link from any webpage. Input: a list of page URLs. Output: JSON with the absolute link URL, anchor text, internal/external type and rel flags (nofollow, sponsored, ugc), plus mailto and tel lists. $0.01 per page flat, however many links it finds. No start fee, no browser, no code.",
+                       "url":  "https://apify.com/eliai/webpage-links-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-links-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "page-scanned",
+                                          "title":  "Page scan",
+                                          "priceUsd":  0.01
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "webpage-tables-extractor",
+                       "name":  "Table Extractor — Scrape HTML Tables from Any URL to JSON/CSV",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Table extractor for webpages: pass a URL and get every HTML data table back as structured rows — JSON via the API or dataset, CSV/Excel via one-click export. Layout tables skipped automatically. For analysts, developers and AI agents. $0.02 per page, failures free.",
+                       "url":  "https://apify.com/eliai/webpage-tables-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/webpage-tables-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "table-extracted",
+                                          "title":  "Table extraction",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "password-strength-analyzer",
+                       "name":  "Password Strength Analyzer - Entropy + Patterns, No Breach DB",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.0004 per primary event",
+                       "description":  "Score passwords by entropy + pattern heuristics (0-4, crack-time, keyboard walks, leet dictionary, common-password list). Built-in wordlists, NOT a breach-database check. Never transmits, logs or echoes the password — fully in-process, release-tested for zero leakage.",
+                       "url":  "https://apify.com/eliai/password-strength-analyzer",
+                       "inputSchemaDoc":  "https://apify.com/eliai/password-strength-analyzer",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  5,
+                                     "succeededLast30d":  5,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "password-checked",
+                                          "title":  "Analyzed passwords",
+                                          "priceUsd":  0.0004
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "mixed-content-checker",
+                       "name":  "Mixed Content Checker",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Find insecure http:// resources on HTTPS pages — the mixed content browsers block and that breaks the padlock. Scans img, script, css, iframe, media and CSS url() references. $0.02 per URL scanned. No API key.",
+                       "url":  "https://apify.com/eliai/mixed-content-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/mixed-content-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  28,
+                                     "succeededLast30d":  28,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "mixed-content-checked",
+                                          "title":  "Mixed-content check",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "contact-details-extractor",
+                       "name":  "Contact Details Extractor - Emails, Phones \u0026 Social Links",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "lead_generation",
+                                        "automation"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Pass website URLs or domains; get emails, phone numbers and social profile links as structured JSON, one record per URL. Each URL also scans /contact, /contact-us and /about on the same site, all for one $0.03 charge. Failed fetches are free. Built for lead gen, CRM enrichment and AI agents.",
+                       "url":  "https://apify.com/eliai/contact-details-extractor",
+                       "inputSchemaDoc":  "https://apify.com/eliai/contact-details-extractor",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  35,
+                                     "succeededLast30d":  35,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "contact-extracted",
+                                          "title":  "Contact extraction",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "security-headers-checker",
+                       "name":  "Security Headers Checker - Grade CSP, HSTS, X-Frame-Options",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Security headers checker for any URL: pass a list of URLs, get one JSON record per URL with the observed CSP, HSTS, X-Frame-Options and related headers, missing-header findings, and an A–F security grade. $0.02 per URL checked.",
+                       "url":  "https://apify.com/eliai/security-headers-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/security-headers-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  29,
+                                     "succeededLast30d":  29,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "headers-checked",
+                                          "title":  "Header check",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "sitemap-analyzer",
+                       "name":  "Sitemap Analyzer — URL Counts, Issues \u0026 robots.txt",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Analyze any XML sitemap in one call: auto-discovery via robots.txt, URL counts, sitemapindex vs urlset detection, size, lastmod and HTTPS issue flags. $0.02 per site analyzed — flat, no per-URL charges.",
+                       "url":  "https://apify.com/eliai/sitemap-analyzer",
+                       "inputSchemaDoc":  "https://apify.com/eliai/sitemap-analyzer",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  30,
+                                     "succeededLast30d":  30,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "sitemap-analyzed",
+                                          "title":  "Sitemap scan",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "redirect-chain-checker",
+                       "name":  "Redirect Chain Checker — Trace 301/302 Hops",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "seo_tools",
+                                        "automation"
+                                    ],
+                       "price":  "$0.02 per primary event",
+                       "description":  "Trace any URL redirect chain: every 301/302 hop with status code and Location, the final destination, hop count, plus redirect loops, long chains, insecure http hops and 302-vs-301 issues. Expands short links too. Bulk input, no API key, $0.02 per URL, no start fee.",
+                       "url":  "https://apify.com/eliai/redirect-chain-checker",
+                       "inputSchemaDoc":  "https://apify.com/eliai/redirect-chain-checker",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  32,
+                                     "succeededLast30d":  32,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "redirect-checked",
+                                          "title":  "Redirect check",
+                                          "priceUsd":  0.02
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "csv-to-excel",
+                       "name":  "CSV to Excel Converter - CSV to XLSX, by URL or Bulk",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "developer_tools",
+                                        "automation",
+                                        "mcp_servers"
+                                    ],
+                       "price":  "$0.03 per primary event",
+                       "description":  "Convert CSV files to Excel spreadsheets by URL - proper quoted-field parsing, custom delimiters, headers detected, column widths set. Batch up to 25 files. Built for scripts, pipelines, and AI agents. $0.03 per file; failures are free.",
+                       "url":  "https://apify.com/eliai/csv-to-excel",
+                       "inputSchemaDoc":  "https://apify.com/eliai/csv-to-excel",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  1,
+                                     "succeededLast30d":  1,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  0,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "file-converted",
+                                          "title":  "Converted files",
+                                          "priceUsd":  0.03
+                                      }
+                                  ]
+                   },
+                   {
+                       "id":  "tiktok-transcript-clean",
+                       "name":  "TikTok Transcript Extractor — Native Captions, SRT, No Login",
+                       "provider":  "EliAI (Broke to Built)",
+                       "category":  [
+                                        "social_media",
+                                        "videos",
+                                        "developer_tools"
+                                    ],
+                       "price":  "$0.001 per primary event",
+                       "description":  "Extract TikTok video transcripts from native captions: clean text, timestamps, SRT, language selection (ISO codes), batch URLs, short links and bare video IDs. $0.001 per transcript — and unlike per-result competitors, videos without captions are never charged. No login, no cookies.",
+                       "url":  "https://apify.com/eliai/tiktok-transcript-clean",
+                       "inputSchemaDoc":  "https://apify.com/eliai/tiktok-transcript-clean",
+                       "transport":  "apify-agentic-x402",
+                       "paymentRail":  "USDC on Base via x402 (Apify agentic payments, prepaid token)",
+                       "stats":  {
+                                     "runsLast30d":  19,
+                                     "succeededLast30d":  19,
+                                     "successRatePct":  100,
+                                     "usersLast30d":  1,
+                                     "totalUsers":  1
+                                 },
+                       "events":  [
+                                      {
+                                          "event":  "transcript-extracted",
+                                          "title":  "Extracted transcripts",
+                                          "priceUsd":  0.001
+                                      }
+                                  ]
+                   }
+               ]
+}

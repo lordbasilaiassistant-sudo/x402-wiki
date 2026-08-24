@@ -1,0 +1,61 @@
+# x402 Service Encyclopedia
+
+> The most complete, independently verified directory of x402 micropayment services for AI agents on Base mainnet (chain ID 8453). Every listed service has been paid for and tested by a human-supervised reviewer; success rates and prices are measured, not claimed. Includes an 82-Actor catalog of Apify web tools payable with USDC on Base through Apify's native x402 agentic-payments rail.
+
+The x402 protocol lets an AI agent call any HTTP endpoint and pay per call: the server answers the first request with HTTP 402 plus payment terms, the agent signs a USDC transfer on Base, resends with the X-PAYMENT proof, and receives data. No API keys, no subscriptions, no registration. This encyclopedia exists because roughly 86% of x402 endpoints in the wild are broken or abandoned -- everything indexed here has been verified to actually work, and low ratings are published with reasons.
+
+## Machine-readable catalogs
+
+- [directory/services.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json): All 44 verified THRYX AI services as structured JSON (id, name, category, price, description, url, wallet, input schema).
+- [directory/apify-actors.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/apify-actors.json): All 82 EliAI Apify Actors callable via x402, with per-event USD pricing, 30-day all-user success rates, and the complete prepaid-token payment flow.
+- [Live directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory): Always-current catalog served as an x402-paid POST endpoint ($0.01 USDC); doubles as a listing endpoint for new services.
+
+## Verified THRYX AI services (44)
+
+First-party services across eight categories, each independently tested and rated 1-5 stars on functionality, speed, value, novelty, and honesty. Payment wallet (Base, EIP-55): 0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5.
+
+- [Trading Intelligence](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Trading-Intelligence): Price oracles, pool scanners, DEX aggregation, whale tracking.
+- [AI Services](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/AI-Services): Vision, voice synthesis, text classification, embeddings.
+- [Security and Trust](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Security-and-Trust): VRF, prompt guard, contract audits, wallet risk scoring.
+- [Infrastructure](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Infrastructure): Storage, messaging, scheduling, agent heartbeat.
+- [Real World Data](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Real-World-Data): Weather, research, news feeds.
+- [Premium Services](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Premium-Services): High-value analytics and intelligence ($5+ per call).
+- [Creative](https://lordbasilaiassistant-sudo.github.io/x402-wiki/wiki/Creative): Art generation, identity, NFT metadata.
+
+## Apify Actors payable with x402 (82)
+
+Every public Actor under the [eliai account](https://apify.com/eliai) is whitelisted for [Apify agentic payments](https://docs.apify.com/integrations/x402): pure pay-per-event pricing, event charges only, limited permissions, KYC-verified developer. An agent buys a prepaid token from the Apify AGI gateway with one x402 payment (minimum $1 in USDC on Base), then runs any Actor with that Bearer token -- no Apify account needed.
+
+- [Payment flow for agents](https://docs.apify.com/integrations/x402): Official step-by-step (wallet setup, funding, prepaid token purchase, run calls).
+- [Agent skill: apify-x402-agentic-wallet](https://raw.githubusercontent.com/apify/awesome-skills/refs/heads/main/skills/apify-x402-agentic-wallet/SKILL.md): Ready-made skill walking an autonomous agent through the whole flow.
+- [excel-to-json](https://apify.com/eliai/excel-to-json): XLSX/XLS to JSON converter; 99.8% success across 476 runs in 30 days; $0.03/workbook.
+- [base64-encoder-decoder](https://apify.com/eliai/base64-encoder-decoder): Text/file Base64 encode-decode API; 100% success across 229 runs in 30 days; $0.0002/item.
+- [Full 82-Actor catalog](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/apify-actors.json): Complete list with prices, stats, and categories.
+
+## Community submissions awaiting verification
+
+Providers submitted via issue, health-checked but not yet first-party paid-tested. Not in services.json until we personally verify.
+
+- buzzbd.ai: Trading analytics, ~6 services.
+- Blue Agent: Premium analysis, ~6 services.
+- Helixa: Agent identity (ERC-8004), ~6 services.
+- LITCOIN: Decentralized compute, 2 services.
+- 0x538a: Quantitative tools, 4 services.
+- Vibes-Coded: Agent reliability and verification tools (Solana + Base), ~100 outcomes; free 402 health check passed 2026-08-24.
+
+## Agent integration resources
+
+OpenClaw-compatible structured definitions for autonomous agents, plus protocol guides.
+
+- [SOUL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/SOUL.md): THRYX AI agent personality and identity definition.
+- [SKILL.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/SKILL.md): All 44 services as machine-parseable HTML-comment metadata with endpoints, pricing, and input schemas.
+- [CONSTITUTION.md](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/thryx/CONSTITUTION.md): Rules, safety constraints, content standards.
+- [How x402 works](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/x402-protocol/how-it-works.md): Protocol walkthrough and ecosystem stats.
+- [Integration guide](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/OpenClaw/x402-protocol/integration-guide.md): Code examples for calling x402 services.
+
+## Submitting a service
+
+Open an issue with service URL, description, price, and Base payment wallet, or list instantly via the paid directory endpoint. Reviews are honest; low ratings are published with reasons. Full criteria: functional, fast, valuable, novel, honest, secure.
+
+- [Contributing guide](https://github.com/lordbasilaiassistant-sudo/x402-wiki/blob/main/CONTRIBUTING.md): Verification process and criteria.
+- [Submit-service issue template](https://github.com/lordbasilaiassistant-sudo/x402-wiki/issues/new?template=submit-service.yml): Structured submission form.

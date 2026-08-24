@@ -1,4 +1,4 @@
-<!-- x402-wiki: {"name":"x402 Service Encyclopedia","provider":"THRYX AI","website":"https://thryx.fun","network":"base","chainId":8453,"servicesVerified":44,"ecosystemServicesIndexed":2060,"ecosystemSource":"ScoutScore","wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","serviceBaseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json"} -->
+<!-- x402-wiki: {"name":"x402 Service Encyclopedia","provider":"THRYX AI","website":"https://thryx.fun","network":"base","chainId":8453,"servicesVerified":44,"ecosystemServicesIndexed":2060,"ecosystemSource":"ScoutScore","apifyActorsX402":82,"wallet":"0x8f9EC800972258E48D7eBC2640EA0b5e245c2Cf5","directoryEndpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","serviceBaseUrl":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/","staticDirectory":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json","apifyActorsJson":"https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/apify-actors.json"} -->
 <!-- JSON-LD: see HTML head injected by Jekyll _layouts/default for schema.org Dataset markup -->
 
 # x402 Service Encyclopedia
@@ -34,6 +34,7 @@ The x402 protocol enables machine-to-machine micropayments for API access. An AI
 | Services indexed across x402 ecosystem | 2,060+ (source: ScoutScore) |
 | Of those, actually returning data when paid | ~14% (source: ScoutScore) |
 | Services verified and reviewed in this wiki | **44** |
+| EliAI Actors callable via x402 (Apify agentic payments) | **82** ([`directory/apify-actors.json`](directory/apify-actors.json)) |
 | Price range across catalog | $0.0001 -- $1,000 per call |
 | Total ecosystem volume to date | $19.6M USDC (source: ScoutScore) |
 | Network | Base mainnet (Chain ID 8453) |
@@ -76,6 +77,28 @@ We are aware of these providers and have queued them for review. Their services 
 
 > Want your service moved from "Queued" to "Verified"? See our [Contributing Guide](CONTRIBUTING.md) -- we test, rate honestly, and add to the directory. Or list programmatically via the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) ($0.01) for instant inclusion.
 
+## Apify Actors Callable via x402
+
+Our [Apify Store catalog](https://apify.com/eliai) is **x402-native**: all 82 public Actors are whitelisted for [Apify agentic payments](https://docs.apify.com/integrations/x402) (pure pay-per-event pricing, limited permissions, KYC-verified developer), which means an AI agent can run any of them with USDC on Base mainnet -- no Apify account, no API key.
+
+**How an agent pays:** buy a prepaid token from the [Apify AGI gateway](https://agi.apify.com) with a single x402 payment (`POST https://agi.apify.com/protocols/x402/prepaid-tokens?amount=1&currency=usd`, $1 minimum in USDC on Base), then use it as a Bearer token against the normal Apify API (`run-sync-get-dataset-items`). Full step-by-step: [`directory/apify-actors.json`](directory/apify-actors.json) -> `paymentFlow`, or the official [x402 agent skill](https://raw.githubusercontent.com/apify/awesome-skills/refs/heads/main/skills/apify-x402-agentic-wallet/SKILL.md).
+
+### Most-tested Actors (30-day all-user success rates, measured 2026-08-24)
+
+| Actor | What it does | Price | 30-day success | Runs |
+|-------|--------------|-------|----------------|------|
+| [base64-encoder-decoder](https://apify.com/eliai/base64-encoder-decoder) | Encode text/files to Base64 + data URIs, decode back; batch | $0.0002/item | 100% | 229 |
+| [excel-to-json](https://apify.com/eliai/excel-to-json) | XLSX/XLS to JSON, every sheet, headers auto-detected | $0.03/workbook | 99.8% | 476 |
+| [pdf-text-extractor](https://apify.com/eliai/pdf-text-extractor) | Extract text from PDF URLs | $0.003/PDF | 100% | 29 |
+| [webpage-images-extractor](https://apify.com/eliai/webpage-images-extractor) | Pull all images + metadata from a page | $0.01/page | 100% | 36 |
+| [website-seo-tech-auditor](https://apify.com/eliai/website-seo-tech-auditor) | SEO + technical audit of any site | $0.10/site | 100% | 31 |
+| [youtube-comments-extractor](https://apify.com/eliai/youtube-comments-extractor) | Scrape YouTube comments | $0.0004/comment | 100% | 18 |
+| [redirect-chain-checker](https://apify.com/eliai/redirect-chain-checker) | Follow and report full redirect chains | $0.02/URL | 100% | 32 |
+| [whois-lookup](https://apify.com/eliai/whois-lookup) | WHOIS registration data for domains | $0.002/domain | 100% | 30 |
+| [robots-txt-analyzer](https://apify.com/eliai/robots-txt-analyzer) | Parse robots.txt rules for a URL | $0.02/check | 100% | 29 |
+
+Success rates are `publicActorRunStats30Days` from the Apify Store API across **all users**, not just ours -- the same number a buyer sees on the store page. The full 82-Actor catalog with per-event pricing and live stats is machine-readable at [`directory/apify-actors.json`](directory/apify-actors.json).
+
 ## OpenClaw Agent Integration
 
 This wiki is **OpenClaw-compatible**. Autonomous agents can use our structured agent definition files for integration:
@@ -104,9 +127,9 @@ The [OpenClaw/](OpenClaw/) folder is the agent resource hub:
 
 ## Service Directory (Machine-Readable)
 
-The [`directory/services.json`](directory/services.json) file contains structured data for all indexed services. AI agents can consume this programmatically for service discovery.
+The [`directory/services.json`](directory/services.json) file contains structured data for all indexed services. AI agents can consume this programmatically for service discovery. The [`directory/apify-actors.json`](directory/apify-actors.json) file does the same for our 82 x402-callable Apify Actors, including the full prepaid-token payment flow.
 
-> **For agents reading this:** Two ways to discover services: (1) Read `directory/services.json` from this repo for the full catalog, or (2) call the directory x402 endpoint for the latest live data. The repo file is updated periodically; the endpoint is always current.
+> **For agents reading this:** Three ways to discover services: (1) Read `directory/services.json` from this repo for the verified THRYX catalog, (2) read `directory/apify-actors.json` for 82 Apify Actors payable with USDC on Base, or (3) call the directory x402 endpoint for the latest live data. The repo files are updated per-commit; the endpoint is always current. An [`llms.txt`](llms.txt) index of everything on this site sits at the root.
 
 List your own service via our x402 directory endpoint:
 ```
