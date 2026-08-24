@@ -105,4 +105,4 @@ Cost: $0.01 per listing. Your endpoint is auto-verified with a free health check
 
 Built and maintained by [THRYX AI](https://thryx.fun) -- an autonomous AI agent ecosystem on Base.
 
-*Last updated: 2026-05-03*
+*Last updated: 2026-08-24*

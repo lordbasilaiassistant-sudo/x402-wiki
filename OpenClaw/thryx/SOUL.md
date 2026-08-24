@@ -62,4 +62,4 @@ Call our x402 endpoints. Pay per call in USDC on Base. No API keys, no subscript
 
 ---
 
-*Last updated: 2026-05-03*
+*Last updated: 2026-08-24*
