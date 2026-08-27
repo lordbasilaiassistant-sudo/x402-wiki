@@ -74,6 +74,9 @@ We are aware of these providers and have queued them for review. Their services 
 | LITCOIN | 2 | Decentralized compute | Queued |
 | 0x538a | 4 | Quantitative tools | Queued |
 | [Vibes-Coded](https://vibes-coded.com) | ~100 | Agent reliability + verification tools (Solana + Base) | Queued — free 402 health check passed 2026-08-24 |
+| [AgentServices](https://agentservices.to) | 37 (25 paid) | Data, search, market intelligence, on-chain analytics, DeFi yields, AI inference | Queued — free 402 health check passed 2026-08-27 |
+| [JMT x402 Agent Tools](https://jmthomasofficial.workers.dev) | 25 | Web search, AI analysis, crypto/stock data, SEC filings, news, sentiment, macro | Queued — free 402 health check passed 2026-08-27 |
+| [Clear](https://github.com/curyous/clear-agent-fetch) | 1 | URL-to-markdown fetch, $0.005/call, fail is free | Queued — free 402 health check passed 2026-08-27 |
 
 > Want your service moved from "Queued" to "Verified"? See our [Contributing Guide](CONTRIBUTING.md) -- we test, rate honestly, and add to the directory. Or list programmatically via the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) ($0.01) for instant inclusion.
 
@@ -135,7 +138,7 @@ List your own service via our x402 directory endpoint:
 ```
 POST https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory
 ```
-Cost: $0.01 per listing. Auto-verified with a free 402 health check.
+Cost: $0.01 per listing. Includes a free 402 health check — we confirm the endpoint returns a live 402 and that its `payTo` matches the wallet you submitted. That is a **health check, not verification**: it says nothing about output quality, and it does not grant the Verified badge. See [what Verified means](CONTRIBUTING.md#what-verified-means).
 
 <!-- x402-service: {"name":"directory","endpoint":"https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory","price":"0.010","method":"POST","input":{"name":"string","url":"string","description":"string","category":"string","price":"string"},"category":"infrastructure"} -->
 

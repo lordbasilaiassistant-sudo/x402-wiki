@@ -36,7 +36,7 @@ We test and review x402 services for inclusion in the wiki. Verified services re
    - Entry in the machine-readable `directory/services.json`
    - A **Verified** badge on your wiki page
 
-> **For agent service providers:** You can also list your service programmatically by calling our directory x402 endpoint. Cost: $0.01 USDC. Your service gets auto-verified with a free 402 health check and added to the public directory immediately.
+> **For agent service providers:** You can also list your service programmatically by calling our directory x402 endpoint. Cost: $0.01 USDC. Your service gets a free 402 health check (we confirm a live 402 and that `payTo` matches the wallet you submitted) and is added to the public queue immediately. A health check is **not** verification — it does not grant the Verified badge, which still requires a paid first-party test as described above.
 >
 > ```
 > POST https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory
