@@ -77,6 +77,8 @@ We are aware of these providers and have queued them for review. Their services 
 | [AgentServices](https://agentservices.to) | 37 (25 paid) | Data, search, market intelligence, on-chain analytics, DeFi yields, AI inference | Queued — free 402 health check passed 2026-08-27 |
 | [JMT x402 Agent Tools](https://jmthomasofficial.workers.dev) | 25 | Web search, AI analysis, crypto/stock data, SEC filings, news, sentiment, macro | Queued — free 402 health check passed 2026-08-27 |
 | [Clear](https://github.com/curyous/clear-agent-fetch) | 1 | URL-to-markdown fetch, $0.005/call, fail is free | Queued — free 402 health check passed 2026-08-27 |
+| [DPE-X402](https://dpe.bdatax.com/dpe) | 1 | French real estate: ADEME energy certificates + DVF price comparables + Géorisques hazards, $0.001/call | Queued — free 402 health check passed 2026-08-29 |
+| [AgentShop](https://github.com/googlepro1/x402-agentshop) | 7 | URL-to-markdown, DEX token snapshot, page metadata, weather, fiat FX, Wikipedia, Hacker News; $0.00001–$0.003/call | Queued — free 402 health check passed 2026-08-29 (7/7 endpoints) |
 
 > Want your service moved from "Queued" to "Verified"? See our [Contributing Guide](CONTRIBUTING.md) -- we test, rate honestly, and add to the directory. Or list programmatically via the [directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory) ($0.01) for instant inclusion.
 
@@ -202,4 +204,4 @@ The goal is not to sell services -- it is to make the x402 micropayment ecosyste
 
 *License: [MIT](LICENSE) -- use this data however you want, attribution appreciated.*
 
-*Last updated: 2026-08-24*
+*Last updated: 2026-08-29*
