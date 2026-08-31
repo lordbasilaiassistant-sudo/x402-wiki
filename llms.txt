@@ -8,6 +8,7 @@ The x402 protocol lets an AI agent call any HTTP endpoint and pay per call: the 
 
 - [directory/services.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/services.json): All 44 verified Broke to Built AI services as structured JSON (id, name, category, price, description, url, wallet, input schema).
 - [directory/apify-actors.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/apify-actors.json): All 82 EliAI Apify Actors callable via x402, with per-event USD pricing, 30-day all-user success rates, and the complete prepaid-token payment flow.
+- [directory/queue.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/queue.json): Community-submitted services that passed a free 402 health check but are not yet first-party paid-tested, each with the measured evidence (HTTP status, latency, advertised payTo, check date).
 - [Live directory endpoint](https://x402.bankr.bot/0x8f9ec800972258e48d7ebc2640ea0b5e245c2cf5/directory): Always-current catalog served as an x402-paid POST endpoint ($0.01 USDC); doubles as a listing endpoint for new services.
 
 ## Verified Broke to Built AI services (44)
@@ -34,7 +35,7 @@ Every public Actor under the [eliai account](https://apify.com/eliai) is whiteli
 
 ## Community submissions awaiting verification
 
-Providers submitted via issue, health-checked but not yet first-party paid-tested. Not in services.json until we personally verify.
+Providers submitted via issue, health-checked but not yet first-party paid-tested. Not in services.json until we personally verify. A health check confirms a live HTTP 402 whose `payTo` matches the submitted wallet -- it says nothing about the data behind the paywall. Machine-readable with per-entry evidence and dates: [directory/queue.json](https://lordbasilaiassistant-sudo.github.io/x402-wiki/directory/queue.json).
 
 - buzzbd.ai: Trading analytics, ~6 services.
 - Blue Agent: Premium analysis, ~6 services.
@@ -42,6 +43,10 @@ Providers submitted via issue, health-checked but not yet first-party paid-teste
 - LITCOIN: Decentralized compute, 2 services.
 - 0x538a: Quantitative tools, 4 services.
 - Vibes-Coded: Agent reliability and verification tools (Solana + Base), ~100 outcomes; free 402 health check passed 2026-08-24.
+- GrantSignal US (Greater Good Grants): Grants.gov opportunity search, fit and briefs; $0.05/call; 402 health check passed 2026-08-31.
+- AutoYT Provider Stack Optimizer (Cognilode, via FiatDock): provider-stack routing for AI/video production; $0.05/call; 402 health check passed 2026-08-31.
+- GF Agent Toll (GFPick): GCC ecommerce landed-cost and decision tools; $0.25-$12.00/call; 402 health check passed 2026-08-31.
+- Agent Earn Radar: crypto bounty radar; health check FAILED 2026-08-31, deployment returns 404 DEPLOYMENT_NOT_FOUND. Not listed until redeployed.
 
 ## Agent integration resources
 

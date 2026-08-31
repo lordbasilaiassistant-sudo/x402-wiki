@@ -44,6 +44,34 @@ We test and review x402 services for inclusion in the wiki. Verified services re
 > {"name": "your-service", "url": "https://your-endpoint.com", "description": "...", "category": "trading", "price": "0.01"}
 > ```
 
+### What Happens To Your Submission
+
+Every issue submission gets a free 402 health check, run with
+[`scripts/health-check.mjs`](scripts/health-check.mjs): we confirm the endpoint
+returns a live HTTP 402 and that the `payTo` it advertises matches the wallet
+you submitted. The measured result -- HTTP status, latency, advertised payee,
+asset, and the date it was checked -- is recorded in
+[`directory/queue.json`](directory/queue.json) and summarised in `llms.txt`.
+
+A health check is **not** verification. It proves your endpoint is alive and
+self-consistent; it says nothing about the quality of the data behind the
+paywall. Verified status, the star rating and a `services.json` entry still
+require the paid first-party test described above.
+
+Two things that commonly cost submitters a pass:
+
+- **Validating the request body before the payment gate.** If a malformed or
+  empty request gets a `400` instead of a `402`, an agent discovering you
+  cannot see your price. Answer `402` first, then validate.
+- **A dead deployment.** We check the URL you submit, on the day you submit it.
+
+To re-check your service after a fix, comment on your issue and we will re-run
+the check, or run it yourself:
+
+```
+node scripts/health-check.mjs <your-service-id>
+```
+
 ### What "Verified" Means
 
 A verified badge means we paid for and tested the service ourselves. It does **not** mean we endorse it. A service can be verified and still receive a low rating if the implementation is weak, the pricing is off, or the utility is limited.

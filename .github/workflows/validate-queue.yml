@@ -1,0 +1,93 @@
+name: Validate queue.json
+
+on:
+  pull_request:
+    paths:
+      - 'directory/queue.json'
+      - 'scripts/health-check.mjs'
+      - '.github/workflows/validate-queue.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'directory/queue.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate community submission queue
+        run: |
+          node -e '
+            const fs = require("fs");
+            const data = JSON.parse(fs.readFileSync("directory/queue.json", "utf8"));
+            if (!Array.isArray(data)) { console.error("queue.json must be a JSON array"); process.exit(1); }
+
+            const required = ["id","name","category","description","wallet","network","price","submittedBy","submittedIn","probe","verified","status"];
+            const allowedCategories = ["trading","ai","security","trust","infrastructure","data","analytics","utility","social","creative"];
+            const allowedStatus = ["HEALTH_CHECKED","UNREACHABLE","PENDING"];
+            const errors = [];
+            const ids = new Set();
+
+            data.forEach((s, i) => {
+              const at = `#${i} (${s.name || s.id || "?"})`;
+              required.forEach(k => {
+                if (s[k] === undefined || s[k] === null || s[k] === "") errors.push(`${at}: missing required field "${k}"`);
+              });
+              if (s.id) {
+                if (ids.has(s.id)) errors.push(`${at}: duplicate id "${s.id}"`);
+                ids.add(s.id);
+              }
+              if (s.category && !allowedCategories.includes(s.category)) errors.push(`${at}: invalid category "${s.category}"`);
+              if (s.status && !allowedStatus.includes(s.status)) errors.push(`${at}: invalid status "${s.status}". Allowed: ${allowedStatus.join(", ")}`);
+              if (s.wallet && !/^0x[a-fA-F0-9]{40}$/.test(s.wallet)) errors.push(`${at}: wallet is not a valid 0x address`);
+              if (s.price && !/^\d+(\.\d+)?$/.test(String(s.price))) errors.push(`${at}: price must be a decimal string like "0.05"`);
+              if (s.probe) {
+                if (!/^https:\/\//.test(s.probe.url || "")) errors.push(`${at}: probe.url must be https://`);
+                if (!["GET","POST"].includes(s.probe.method)) errors.push(`${at}: probe.method must be GET or POST`);
+              }
+
+              // Nothing in the queue may claim verification -- that is a
+              // services.json concept and requires a paid first-party test.
+              if (s.verified !== false) errors.push(`${at}: queue entries must have "verified": false`);
+
+              // A HEALTH_CHECKED entry must carry the evidence that earned it.
+              if (s.status === "HEALTH_CHECKED") {
+                const h = s.healthCheck;
+                if (!h) errors.push(`${at}: status HEALTH_CHECKED but no healthCheck evidence recorded`);
+                else {
+                  if (h.verdict !== "PASS") errors.push(`${at}: status HEALTH_CHECKED but healthCheck.verdict is "${h.verdict}"`);
+                  if (h.httpStatus !== 402) errors.push(`${at}: status HEALTH_CHECKED but httpStatus is ${h.httpStatus}, not 402`);
+                  if (h.payToMatches !== true) errors.push(`${at}: status HEALTH_CHECKED but payToMatches is ${h.payToMatches}`);
+                  if (!h.checkedAt) errors.push(`${at}: healthCheck is missing checkedAt`);
+                }
+              }
+            });
+
+            if (errors.length) {
+              console.error("queue.json validation FAILED:\n" + errors.map(e => "  - " + e).join("\n"));
+              process.exit(1);
+            }
+            console.log(`queue.json OK — ${data.length} submissions validated`);
+          '
+
+      - name: Warn on stale health checks (>30 days)
+        if: always()
+        run: |
+          node -e '
+            const fs = require("fs");
+            const data = JSON.parse(fs.readFileSync("directory/queue.json", "utf8"));
+            const now = Date.now();
+            let stale = 0;
+            for (const s of data) {
+              const at = s.healthCheck && s.healthCheck.checkedAt;
+              if (!at) continue;
+              const days = Math.floor((now - Date.parse(at)) / 86400000);
+              if (days > 30) {
+                stale++;
+                console.log(`::warning::${s.id} was last health-checked ${days} days ago — re-run: node scripts/health-check.mjs ${s.id} --write`);
+              }
+            }
+            console.log(stale ? `${stale} stale entr(ies).` : "All health checks are within 30 days.");
+          '

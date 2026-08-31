@@ -1,0 +1,158 @@
+[
+  {
+    "id": "grantsignal-us",
+    "name": "GrantSignal US",
+    "provider": "Greater Good Grants",
+    "category": "data",
+    "description": "Turns current Grants.gov opportunity records into structured search, detail, applicant-fit and research-brief responses for agents.",
+    "website": "https://greatergood.site/grants",
+    "wallet": "0x4Aec5B87c4b089D9d24308705Cfda70512B4D255",
+    "network": "eip155:8453",
+    "price": "0.05",
+    "submittedBy": "Froydinger",
+    "submittedIn": 17,
+    "submittedAt": "2026-08-31",
+    "probe": {
+      "method": "POST",
+      "url": "https://greatergood.site/v1/grants/search",
+      "body": {
+        "query": "education",
+        "limit": 5
+      }
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "Submission cited POST /v1/grants/preflight as the live 402 route, but that route validates its body before the payment gate and answers 400 to an unpaid probe. /v1/grants/search returns a clean 402 and is used as the probe instead.",
+      "The published manifest at /.well-known/x402 advertises its resources on host genuinegood.online, not the submitted greatergood.site."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-08-31",
+      "latencyMs": 2566,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x4Aec5B87c4b089D9d24308705Cfda70512B4D255",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "50000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
+  },
+  {
+    "id": "autoyt-provider-stack-optimizer",
+    "name": "AutoYT Provider Stack Optimizer",
+    "provider": "Cognilode AutoYT",
+    "category": "utility",
+    "description": "Deterministic provider-stack routing for AI/video production: stage-by-stage route, expected cost and latency, reliability-adjusted quality and ranked fallbacks.",
+    "website": "https://www.fiatdock.com/service/svc_7b482f89-dc48-4cf4-9b4d-03483f858db5",
+    "wallet": "0x614ec6f39baABE12bB028dd176fc5d2531c350df",
+    "network": "eip155:8453",
+    "price": "0.05",
+    "submittedBy": "evanbrown3000",
+    "submittedIn": 15,
+    "submittedAt": "2026-08-31",
+    "probe": {
+      "method": "POST",
+      "url": "https://fiatdock.com/s/svc_7b482f89-dc48-4cf4-9b4d-03483f858db5",
+      "body": {}
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "Brokered through the FiatDock marketplace; the 402 is served by the marketplace gateway, which reported feeBps=0 at check time."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-08-31",
+      "latencyMs": 270,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x614ec6f39baabe12bb028dd176fc5d2531c350df",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "50000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
+  },
+  {
+    "id": "gf-agent-toll",
+    "name": "GF Agent Toll",
+    "provider": "GFPick",
+    "category": "data",
+    "description": "GCC ecommerce decision tools (landed cost, opportunity score, product decision, portfolio rank, merchant pack) over HTTP, MCP, A2A and x402.",
+    "website": "https://gfpick-agent-api.vercel.app",
+    "wallet": "0x4B7098E3b882633d3205FDE3E7ac7Ea1D965D3C3",
+    "network": "eip155:8453",
+    "price": "0.25",
+    "submittedBy": "hamadalmajdouie-rgb",
+    "submittedIn": 14,
+    "submittedAt": "2026-08-31",
+    "probe": {
+      "method": "POST",
+      "url": "https://gfpick-agent-api.vercel.app/v1/sa/landed-cost",
+      "body": {
+        "currency": "SAR",
+        "product_value": 100,
+        "shipping": 20,
+        "insurance": 0,
+        "duty_rate_pct": 5,
+        "vat_rate_pct": 15
+      }
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "Like GrantSignal, this endpoint validates the request body before the payment gate: a malformed body answers 400, not 402. The probe body above matches the published OpenAPI example.",
+      "Priced tiers run $0.25 to $12.00; the probe covers the $0.25 landed-cost route."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-08-31",
+      "latencyMs": 194,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x4B7098E3b882633d3205FDE3E7ac7Ea1D965D3C3",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "250000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
+  },
+  {
+    "id": "agent-earn-radar",
+    "name": "Agent Earn Radar",
+    "provider": "future-zhang",
+    "category": "data",
+    "description": "Live agent-eligible crypto bounty listings with reward, deadline, competition and payout-evidence fields.",
+    "website": "https://github.com/future-zhang/agent-earn-radar",
+    "wallet": "0x568Ab98578d682FB0B0b45619BE73EbFfbf5a6eA",
+    "network": "eip155:8453",
+    "price": "0.05",
+    "submittedBy": "future-zhang",
+    "submittedIn": 11,
+    "submittedAt": "2026-08-31",
+    "probe": {
+      "method": "GET",
+      "url": "https://agent-earn-radar.vercel.app/api/radar"
+    },
+    "verified": false,
+    "status": "UNREACHABLE",
+    "notes": [
+      "The whole Vercel deployment is gone: the paid route, the free preview and the site root all answer 404 DEPLOYMENT_NOT_FOUND. Re-check once the submitter redeploys."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-08-31",
+      "latencyMs": 99,
+      "httpStatus": 404,
+      "note": "The deployment could not be found on Vercel. DEPLOYMENT_NOT_FOUND iad1::kw2mj-1788214848399-49d7900ab9f7",
+      "verdict": "FAIL"
+    }
+  }
+]
