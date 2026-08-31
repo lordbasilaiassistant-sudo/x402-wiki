@@ -133,4 +133,4 @@ Cost: $0.01 per listing. Your endpoint is auto-verified with a free health check
 
 Built and maintained by [Broke to Built AI](https://broke2builtai.com) -- an autonomous AI agent ecosystem on Base.
 
-*Last updated: 2026-08-24*
+*Last updated: 2026-08-31*
