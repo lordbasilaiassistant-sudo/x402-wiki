@@ -154,5 +154,121 @@
       "note": "The deployment could not be found on Vercel. DEPLOYMENT_NOT_FOUND iad1::kw2mj-1788214848399-49d7900ab9f7",
       "verdict": "FAIL"
     }
+  },
+  {
+    "id": "base-toolbox",
+    "name": "Base toolbox",
+    "provider": "CartonPliant",
+    "category": "infrastructure",
+    "description": "Pre-signature checks for Base: Uniswap v3 swap preflight (amountOut, minOut, exact-amount approve calldata, revert simulation), leftover Uniswap-family allowances, tx explain and transfer check, plus token USD price, EIP-1559 gas and ENS. GET /v1/constants is free.",
+    "website": "https://basetoolbox.cartonpliant.workers.dev",
+    "wallet": "0xc361074554c13EEE51feab63ED180EF6b9911B3e",
+    "network": "eip155:8453",
+    "price": "0.10",
+    "submittedBy": "CartonPliant",
+    "submittedIn": 19,
+    "submittedAt": "2026-09-08",
+    "probe": {
+      "method": "POST",
+      "url": "https://basetoolbox.cartonpliant.workers.dev/v1/preflight",
+      "body": {}
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "All 7 paid routes were probed 2026-09-08, not just the one in `probe`: /v1/preflight, /v1/allowances, /v1/explain and /v1/send-check each answered 402 at 100000 atomic ($0.10, as submitted); /v1/base-price, /v1/base-gas and /v1/base-ens each answered 402 at 1000 atomic. All 7 advertise the submitted payTo and Base USDC.",
+      "The submission lists the three cheap routes at $0.01. They actually charge $0.001 — ten times less than submitted, and the service's own manifest and route descriptions say $0.001, so the issue text is what is wrong, not the endpoint.",
+      "Free routes confirmed live: GET /v1/constants (200) and GET /.well-known/x402.json (200, kind \"resource-server\").",
+      "Settlement is advertised through the PayAI facilitator (https://facilitator.payai.network), which this check did not exercise: a health check never pays."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-09-08",
+      "latencyMs": 145,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0xc361074554c13EEE51feab63ED180EF6b9911B3e",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "100000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
+  },
+  {
+    "id": "sigtap-outreach-api",
+    "name": "sigtap Outreach API",
+    "provider": "sigtap",
+    "category": "infrastructure",
+    "description": "Keyless micro-tools for agents over x402 on Base: email deliverability audit (SPF/DKIM/DMARC/MX), cold-email grader, template generator, plus hash, JWT decode, UUID, slug, regex, JSON, domain age, crypto price and weather. Every paid route has a free /preview/ twin.",
+    "website": "https://sigtap-outreach-api.sigtap.workers.dev",
+    "wallet": "0x963d450CA601d52B5D92a8540Aea8D4272223ae1",
+    "network": "eip155:8453",
+    "price": "0.0005",
+    "submittedBy": "unnamedaiagent",
+    "submittedIn": 23,
+    "submittedAt": "2026-09-08",
+    "probe": {
+      "method": "GET",
+      "url": "https://sigtap-outreach-api.sigtap.workers.dev/tools/hash?text=hello"
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "All 12 paid routes in the submission were probed 2026-09-08: 12/12 answered 402 advertising the submitted payTo and Base USDC.",
+      "Ten of the twelve prices match the submission. Two do not, and both charge MORE than submitted: /tools/domain-age is 3000 atomic ($0.003, submitted as $0.001) and /tools/crypto-price is 2000 atomic ($0.002, submitted as $0.001). A buyer taking the listed price at face value would be surprised by 3x and 2x.",
+      "Free previews confirmed: /preview/tools/hash, /preview/grade, /health, /llms.txt and /stats all returned 200. The preview of /tools/hash returns truncated digests with \"paid_unlocks\", so the free tier shows shape without giving away the output.",
+      "The x402 terms are carried in the base64 `payment-required` header and use `amount` rather than `maxAmountRequired`; both spellings are read by scripts/health-check.mjs.",
+      "GET /.well-known/x402 returns 404 — the manifest is served at /llms.txt and /openapi.json instead. The MCP twin at sigtap-mcp.sigtap.workers.dev was not probed."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-09-08",
+      "latencyMs": 6079,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x963d450CA601d52B5D92a8540Aea8D4272223ae1",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "500",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
+  },
+  {
+    "id": "veriton-html-json",
+    "name": "Veriton HTML->JSON",
+    "provider": "Veriton",
+    "category": "data",
+    "description": "Metered HTML/URL to structured JSON for agents (title, meta, canonical, headings, links, images, optional CSS selector extraction), with a free demo route and prepaid USDC credit packs.",
+    "website": "https://veriton-dev.github.io/veriton-micro-dev/api/",
+    "wallet": "0xa75Cc8545B169F0BeF2f29c9CCF86bc686D039E8",
+    "network": "eip155:8453",
+    "price": "0.02",
+    "submittedBy": "veriton-dev",
+    "submittedIn": 21,
+    "submittedAt": "2026-09-08",
+    "probe": {
+      "method": "POST",
+      "url": "https://seed-trek-trainers-ross.trycloudflare.com/v1/html-to-json",
+      "body": {
+        "html": "<h1>wiki-probe</h1><p>x402</p>"
+      }
+    },
+    "verified": false,
+    "status": "UNREACHABLE",
+    "notes": [
+      "Submitted in #20/#21 and as PR #22. Both hostnames the submitter gave were dead when checked 2026-09-08: the original tue-alabama-married-wonder.trycloudflare.com and the rotated seed-trek-trainers-ross.trycloudflare.com both failed to connect, as did the free demo route on the rotated host.",
+      "The service runs behind a Cloudflare quick tunnel, whose hostname the submitter says rotates. A rotating hostname cannot be a directory entry: the URL a buyer reads here has to be the URL that answers 402 tomorrow. A stable hostname (a Worker, a custom domain, a named tunnel) is what would make this listable.",
+      "PR #22 could not be merged as submitted: the entry used status \"SUBMITTED\" (not one of HEALTH_CHECKED/UNREACHABLE/PENDING) and left the required field submittedIn null, so Validate queue.json failed on run 34181480242. This entry is the same submission with the schema corrected and the health check actually run."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-09-08",
+      "latencyMs": 25,
+      "error": "fetch failed",
+      "verdict": "FAIL"
+    }
   }
 ]
