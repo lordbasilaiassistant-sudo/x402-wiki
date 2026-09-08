@@ -154,5 +154,36 @@
       "note": "The deployment could not be found on Vercel. DEPLOYMENT_NOT_FOUND iad1::kw2mj-1788214848399-49d7900ab9f7",
       "verdict": "FAIL"
     }
+  },
+  {
+    "id": "veriton-html-json",
+    "name": "Veriton HTML\u2192JSON",
+    "provider": "Veriton",
+    "category": "data",
+    "description": "Metered HTML/URL to structured JSON for agents (title, meta, headings, links, images, CSS selector). Base USDC x402 + prepaid credits. Free demo at /v1/demo/html-to-json.",
+    "website": "https://veriton-dev.github.io/veriton-micro-dev/api/",
+    "wallet": "0xa75Cc8545B169F0BeF2f29c9CCF86bc686D039E8",
+    "network": "eip155:8453",
+    "price": "0.02",
+    "submittedBy": "veriton-dev",
+    "submittedIn": null,
+    "submittedAt": "2026-09-08",
+    "probe": {
+      "method": "POST",
+      "url": "https://seed-trek-trainers-ross.trycloudflare.com/v1/html-to-json",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": {
+        "html": "<h1>wiki-probe</h1><p>x402</p>"
+      }
+    },
+    "verified": false,
+    "status": "SUBMITTED",
+    "notes": [
+      "Live host rotates via Cloudflare quick tunnel; stable docs on GH Pages.",
+      "Also exposes GET /.well-known/x402 and free POST /v1/demo/html-to-json.",
+      "Issue submission: https://github.com/lordbasilaiassistant-sudo/x402-wiki/issues/21"
+    ]
   }
 ]
