@@ -252,23 +252,34 @@
     "submittedAt": "2026-09-08",
     "probe": {
       "method": "POST",
-      "url": "https://seed-trek-trainers-ross.trycloudflare.com/v1/html-to-json",
+      "url": "https://veriton-html-json-api.netlify.app/v1/html-to-json",
       "body": {
         "html": "<h1>wiki-probe</h1><p>x402</p>"
       }
     },
     "verified": false,
-    "status": "UNREACHABLE",
+    "status": "HEALTH_CHECKED",
     "notes": [
-      "Submitted in #20/#21 and as PR #22. Both hostnames the submitter gave were dead when checked 2026-09-08: the original tue-alabama-married-wonder.trycloudflare.com and the rotated seed-trek-trainers-ross.trycloudflare.com both failed to connect, as did the free demo route on the rotated host.",
-      "The service runs behind a Cloudflare quick tunnel, whose hostname the submitter says rotates. A rotating hostname cannot be a directory entry: the URL a buyer reads here has to be the URL that answers 402 tomorrow. A stable hostname (a Worker, a custom domain, a named tunnel) is what would make this listable.",
-      "PR #22 could not be merged as submitted: the entry used status \"SUBMITTED\" (not one of HEALTH_CHECKED/UNREACHABLE/PENDING) and left the required field submittedIn null, so Validate queue.json failed on run 34181480242. This entry is the same submission with the schema corrected and the health check actually run."
+      "Submitted in #20/#21 and as PR #22, then re-probed after PR #24 moved the resource off a Cloudflare quick tunnel. The two tunnel hostnames the submitter first gave (tue-alabama-married-wonder and seed-trek-trainers-ross) were both dead when checked 2026-09-08; the submitter replaced them with a durable origin at veriton-html-json-api.netlify.app, and that host answers. The failed check is left in this record on purpose.",
+      "Re-checked 2026-09-08 at the new origin: POST /v1/html-to-json returned 402 with x402Version 2, scheme exact, network eip155:8453, asset Base USDC, payTo 0xa75Cc8545B169F0BeF2f29c9CCF86bc686D039E8 -- the wallet in the submission.",
+      "Both paid routes were probed, not just the one in `probe`, and both prices match the submission exactly: /v1/html-to-json is 20000 atomic ($0.02) and /v1/fetch-to-json is 50000 atomic ($0.05). Terms arrive both in the JSON body and in the base64 `payment-required` header.",
+      "Free routes confirmed live: POST /v1/demo/html-to-json returns 200 with a real parse of the submitted HTML, GET /.well-known/x402 returns 200 (spec x402-discovery/1, listing both resources), GET /health and GET /v1/openapi.json return 200. GET /llms.txt is 404, and /health and /v1/openapi.json are GET-only -- a POST to either returns 404, so a caller probing with the wrong verb will read it as missing.",
+      "Settlement is advertised through the PayAI facilitator (https://facilitator.payai.network) alongside prepaid credits via /v1/credits/quote and /v1/credits/claim; this check did not exercise either, because a health check never pays.",
+      "PR #22 could not be merged as submitted (status \"SUBMITTED\", submittedIn null). PR #24 hit the same validator with status \"PENDING_RECHECK\" -- also not one of HEALTH_CHECKED/UNREACHABLE/PENDING -- and was corrected in place on the PR branch by running scripts/health-check.mjs, which sets the status from the measured verdict rather than by hand."
     ],
     "healthCheck": {
       "checkedAt": "2026-09-08",
-      "latencyMs": 25,
-      "error": "fetch failed",
-      "verdict": "FAIL"
+      "latencyMs": 660,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0xa75Cc8545B169F0BeF2f29c9CCF86bc686D039E8",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "20000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
     }
   }
 ]
