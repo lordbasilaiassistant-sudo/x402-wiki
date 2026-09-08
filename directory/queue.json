@@ -148,10 +148,10 @@
       "The whole Vercel deployment is gone: the paid route, the free preview and the site root all answer 404 DEPLOYMENT_NOT_FOUND. Re-check once the submitter redeploys."
     ],
     "healthCheck": {
-      "checkedAt": "2026-08-31",
-      "latencyMs": 99,
+      "checkedAt": "2026-09-08",
+      "latencyMs": 100,
       "httpStatus": 404,
-      "note": "The deployment could not be found on Vercel. DEPLOYMENT_NOT_FOUND iad1::kw2mj-1788214848399-49d7900ab9f7",
+      "note": "The deployment could not be found on Vercel. DEPLOYMENT_NOT_FOUND iad1::kgfh2-1788872246029-f9ae8c2be1f4",
       "verdict": "FAIL"
     }
   },
