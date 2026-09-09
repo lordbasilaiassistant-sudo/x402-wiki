@@ -208,4 +208,4 @@ The goal is not to sell services -- it is to make the x402 micropayment ecosyste
 
 *License: [MIT](LICENSE) -- use this data however you want, attribution appreciated.*
 
-*Last updated: 2026-09-08*
+*Last updated: 2026-09-09*
