@@ -281,5 +281,49 @@
       "assetIsBaseUSDC": true,
       "verdict": "PASS"
     }
+  },
+  {
+    "id": "zfinia-wcag-contrast-calculator",
+    "name": "zFinia WCAG Contrast Calculator",
+    "provider": "zFinia",
+    "category": "utility",
+    "description": "Deterministically calculates WCAG 2.x sRGB contrast for one caller-supplied foreground/background pair and returns contrast_ratio, wcag_aa, wcag_aaa and large_text.",
+    "website": "https://www.zfinia.com/find-x402-apis",
+    "wallet": "0x25E8245f07D5E4873987293daD666AFbe56a9608",
+    "network": "eip155:8453",
+    "price": "0.001",
+    "submittedBy": "thebigcheeseorama-ship-it",
+    "submittedIn": 25,
+    "submittedAt": "2026-09-09",
+    "probe": {
+      "method": "POST",
+      "url": "https://api.zfinia.com/x402/v1/accessibility-contrast-calculator",
+      "body": {
+        "foreground": "#000000",
+        "background": "#ffffff",
+        "large_text": false
+      }
+    },
+    "verified": false,
+    "status": "HEALTH_CHECKED",
+    "notes": [
+      "Scope is narrow and self-limiting: one colour pair per call, no URL fetch, and the 402 body itself carries a limitations note that it is not an interface-wide accessibility assessment. No test transaction was supplied; the operator asked for the free 402 health check only.",
+      "402 advertises amount 1000 atomic USDC = $0.001, matching the submitted price.",
+      "The published manifest at /.well-known/x402 advertises this route plus three others (data-compatibility-checker, catalog-offer-evidence-extractor, changes-since) on the same host and the same payTo. Only the contrast calculator was submitted, so only it was checked."
+    ],
+    "healthCheck": {
+      "checkedAt": "2026-09-09",
+      "latencyMs": 3614,
+      "httpStatus": 402,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x25e8245f07d5e4873987293dad666afbe56a9608",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amountAtomic": "1000",
+      "payToMatches": true,
+      "assetIsBaseUSDC": true,
+      "verdict": "PASS"
+    }
   }
 ]
